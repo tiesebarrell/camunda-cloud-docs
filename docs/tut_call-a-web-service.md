@@ -1,3 +1,3 @@
-# Tutorial: Call a web service
+# Tutorial: First workflow to orchestrate web services
 
 ...
