@@ -108,7 +108,7 @@ Now you can deploy a new workflow. You can use this demo workflow for this:
 
 [![demo-workflow](assets/gettingstarted_quickstart.png)](./assets/gettingstarted_quickstart.bpmn)
 
-Download the [BPMN model](assets/gettingstarted_quickstart.bpmn) and change into the directory. Next deploy the model with the following command:
+Download the [BPMN model](assets/gettingstarted_quickstart.bpmn) and change into the directory. The workflow uses the embedded HTTP worker in the cloud to submit an HTTP Get Request to [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts). Next deploy the model with the following command:
 
 ```bash
 zbctl deploy gettingstarted_quickstart.bpmn
