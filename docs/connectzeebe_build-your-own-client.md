@@ -2,7 +2,7 @@
 
 If you are using a technology for which there is no library yet, you can easily implement your own client.
 
-There are two steps to do this, and the clients will do it for you:
+Two essential steps must be taken:
 
 1. Authentication via OAuth
 2. GRPC handling
