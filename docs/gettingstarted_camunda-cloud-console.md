@@ -1,10 +1,6 @@
 # Camunda Cloud Console
 
-## Console Overview
-
 Camunda Cloud serves as a umbrella for the next generation of Camunda products. The Cloud Console is the control centre for these products.
-
-Components of the Console
 
 Zeebe clusters can be created and operated via the cloud console. For each Zeebe cluster, the following products are provided:
 
