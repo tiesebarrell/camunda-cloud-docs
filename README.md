@@ -13,7 +13,7 @@
   * [Zeebe](./docs/zeebecluster_zeebe.md)
   * [Operate](./docs/zeebecluster_operate.md)
   * [Embedded HTTP Worker](./docs/zeebecluster_embedded-http-worker.md)
-  * [Clients](.(docs/../docs/zeebecluster_clients.md))
+  * [Clients](./docs/zeebecluster_clients.md)
 * Connect to Zeebe
   * [CLI: `zbctl`](./docs/connectzeebe_cli-zbctl.md)
   * [Zeebe Node Client](./docs/connectzeebe_node-client.md)
