@@ -10,6 +10,8 @@
   * [Quick start](./docs/gettingstarted_quick-start.md)
   * [Camunda Cloud Console](./docs/gettingstarted_camunda-cloud-console.md)
 * Zeebe Cluster
+  * [Zeebe](./docs/zeebecluster_zeebe.md)
+  * [Operate](./docs/zeebecluster_operate.md)
   * [Embedded HTTP Worker](./docs/zeebecluster_embedded-http-worker.md)
   * [Clients](.(docs/../docs/zeebecluster_clients.md))
 * Connect to Zeebe
