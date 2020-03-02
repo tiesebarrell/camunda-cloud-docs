@@ -6,7 +6,7 @@ The GitHub repository contains detailed documentation on how to use the client. 
 
 ## Examples
 
-### Connect to Camunda Cloud
+### Get status
 
 As in the [`zbctl` example](./connectzeebe_cli-zbctl.md), a [client](./zeebecluster_clients.md) must first be created. Then set the environment variables.
 
