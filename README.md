@@ -16,7 +16,10 @@
   * [Clients](./docs/zeebecluster_clients.md)
 * Connect to Zeebe
   * [CLI: `zbctl`](./docs/connectzeebe_cli-zbctl.md)
-  * [Zeebe Node Client](./docs/connectzeebe_node-client.md)
+  * [Node Client](./docs/connectzeebe_node-client.md)
+  * [Java Client](./docs/connectzeebe_java-client.md)
+  * [Go Client](./docs/connectzeebe_go-client.md)
+  * [Community-supported clients](./docs/connectzeebe_other-clients.md)
   * [Build your own client](./docs/connectzeebe_build-your-own-client.md)
 * Tutorials
   * [Call a web service](./docs/tut_call-a-web-service.md)
