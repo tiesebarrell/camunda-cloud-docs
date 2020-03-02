@@ -2,11 +2,26 @@
 
 ## Workflow Engineered For The Cloud
 
-Camunda Cloud delivers a scalable, on-demand workflow platform:
+[Camunda Cloud](https://camunda.com/products/cloud/) delivers a scalable, on-demand workflow platform:
 
 * Design, automate, and manage your business-critical processes
 * Scale to meet performance and throughput requirements
 * Improve developer productivity
 * Seamlessly integrate with your tools
 
-see [https://camunda.com/products/](https://camunda.com/products/)
+![camunda-cloud-overview](https://camunda.com/img/products/cloud/camunda-cloud-stack-web.svg)
+
+Currently, Camunda Cloud offers the following components, which materialise in a Zeebe cluster:
+
+* [Zeebe](https://zeebe.io/): Workflow Engine
+* [Operate](https://docs.zeebe.io/operations/): Monitoring and Operating Tool
+* [Embedded HTTP Worker](https://github.com/zeebe-io/zeebe-http-worker): Worker that is connected to the Zeebe Broker by default and can execute HTTP requests.
+
+Workflows are created and parameterized with the [Zeebe Modeler](https://github.com/zeebe-io/zeebe-modeler): a desktop application, which is not available as SaaS. Cawemo can also be used for modeling, but please note that Zeebe does not yet support all BPMN symbols.
+
+## Outlook
+
+In future the following products will also become part of Camunda Cloud:
+
+* [Cawemo](https://cawemo.com/): collaborative modeling of workflows. Cawemo can already be used independently, but has no link to Camunda Cloud yet.
+* Tasklist and Optimize: Similar to the products for Camunda BPM, there will be a version in the cloud that works with Zeebe.
