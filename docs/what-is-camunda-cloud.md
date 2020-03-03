@@ -1,4 +1,7 @@
-# What is Camunda Cloud?
+---
+id: what-is-camunda-cloud
+title: What is Camunda Cloud?
+---
 
 ## Workflow Engineered For The Cloud
 

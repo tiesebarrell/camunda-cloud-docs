@@ -1,4 +1,7 @@
-# Public Beta
+---
+id: public-beta
+title: Public Beta
+---
 
 September 2019 Camunda Cloud was announced and thus the private beta was started. In this phase users had to be invited to use Camunda Cloud.
 

@@ -1,4 +1,7 @@
-# Camunda Cloud Console
+---
+id: camunda-cloud-console
+title: Camunda Cloud Console
+---
 
 Camunda Cloud serves as a umbrella for the next generation of Camunda products. The Cloud Console is the control centre for these products.
 
@@ -12,7 +15,7 @@ The products are always delivered in the last available stable version. The Zeeb
 
 The provisioning of a Zeebe cluster takes about two minutes. As soon as a Zeebe cluster is operational, its state jumps from *Unhealthy* to *Healthy*.
 
-To interact with Zeebe, an application must authenticate itself via OAuth. A [client](.zeebecluster_clients.md) must be created in advance for this purpose.
+To interact with Zeebe, an application must authenticate itself via OAuth. A [client](./zeebecluster_clients.md) must be created in advance for this purpose.
 
 ## Rights concept
 

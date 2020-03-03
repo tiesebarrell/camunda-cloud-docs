@@ -1,4 +1,7 @@
-# Quick start
+---
+id: quick-start
+title: Quick start
+---
 
 This section helps you to get up and running with your first Camunda Cloud Cluster using `zbctl`, in only minutes!
 

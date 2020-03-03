@@ -1,0 +1,31 @@
+{
+  "docs": {
+    "Welcome": ["welcome", "what-is-camunda-cloud", "contact"],
+    "Getting started": [
+      "getting-started",
+      "public-beta",
+      "quick-start",
+      "camunda-cloud-console"
+    ],
+    "Zeebe Cluster": ["zeebe", "operate", "http-worker", "clients"],
+    "Connect to Zeebe": [
+      "cli-zbctl",
+      "node-client",
+      "java-client",
+      "go-client",
+      "other-clients",
+      "build-your-own-client"
+    ],
+    "Tutorials": [
+      "tut-call-a-web-service",
+      "tut-integrate-zeit",
+      "tut-testdrive-github-actions"
+    ],
+    "Docusaurus": ["doc1"],
+    "First Category": ["doc2"],
+    "Second Category": ["doc3"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}

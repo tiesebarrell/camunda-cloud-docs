@@ -1,4 +1,7 @@
-# Getting started
+---
+id: getting-started
+title: Getting started
+---
 
 This section describes everything you need to get started using Camunda Cloud:
 
