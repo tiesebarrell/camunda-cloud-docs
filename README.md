@@ -15,7 +15,7 @@ You can now browse the docs under [http://localhost:3000/](http://localhost:3000
 
 ## Publishing
 
-All commits to the branch `gh-pages` are automatically published to GitHub Pages. Locall you can use the following command as well:
+All commits to the branch `gh-pages` are automatically published to GitHub Pages. Locally you can use the following command as well:
 
 ```bash
 cd website
