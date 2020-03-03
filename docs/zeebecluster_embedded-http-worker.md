@@ -1,4 +1,7 @@
-# Embedded HTTP Worker
+---
+id: http-worker
+title: Embedded HTTP Worker
+---
 
 ## Worker
 

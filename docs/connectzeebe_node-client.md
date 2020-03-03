@@ -1,4 +1,7 @@
-# Zeebe Node Client
+---
+id: node-client
+title: Zeebe Node Client
+---
 
 The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for node applications. The client can be used for self-hosted Zeebes as well as for a connection to Camunda Cloud.
 

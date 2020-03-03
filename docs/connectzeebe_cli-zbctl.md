@@ -1,4 +1,7 @@
-# Command Line Interface: `zbctl`
+---
+id: cli-zbctl
+title: Command Line Interface: zbctl
+---
 
 `zbctl` is the command line interface to interact with Zeebe in the cloud. After installation, a connection can be tested immediately.
 

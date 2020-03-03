@@ -1,4 +1,7 @@
-# Build your own client
+---
+id: build-your-own-client
+title: Build your own client
+---
 
 If you are using a technology for which there is no library yet, you can easily implement your own client.
 
