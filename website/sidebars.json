@@ -20,12 +20,6 @@
       "tut-call-a-web-service",
       "tut-integrate-zeit",
       "tut-testdrive-github-actions"
-    ],
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    ]
   }
 }
