@@ -24,9 +24,9 @@ const users = [
 const siteConfig = {
   title: "Camunda Cloud Documentation", // Title for your website.
   tagline: "Documentation to get started with Camunda Cloud",
-  // url: "https://camunda-cloud.github.io", // Your website URL
+  url: "https://camunda-cloud.github.io", // Your website URL
   // baseUrl: "/camunda-cloud-docs/", // Base URL for your project */
-  url: "https://docs.cloud.camunda.io", // Your website URL
+  // url: "https://docs.cloud.camunda.io", // Your website URL
   baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
