@@ -14,7 +14,8 @@ const users = [
     caption: "Mineko",
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: "https://www.mineko.de/wp-content/themes/enfold-child/images/MinekoLogo-mit-claim-verlauf.svg",
+    image:
+      "https://www.mineko.de/wp-content/themes/enfold-child/images/MinekoLogo-mit-claim-verlauf.svg",
     infoLink: "https://www.mineko.de/",
     pinned: true
   }
@@ -23,8 +24,10 @@ const users = [
 const siteConfig = {
   title: "Camunda Cloud Documentation", // Title for your website.
   tagline: "Documentation to get started with Camunda Cloud",
-  url: "https://camunda-cloud.github.io", // Your website URL
-  baseUrl: "/camunda-cloud-docs/", // Base URL for your project */
+  // url: "https://camunda-cloud.github.io", // Your website URL
+  // baseUrl: "/camunda-cloud-docs/", // Base URL for your project */
+  url: "https://docs.cloud.camunda.io", // Your website URL
+  baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -85,7 +88,7 @@ const siteConfig = {
   // enableUpdateBy: true,
 
   // Show documentation's last update time.
-  enableUpdateTime: true,
+  enableUpdateTime: true
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
