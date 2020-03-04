@@ -59,6 +59,7 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://blog.camunda.com/">Blog</a>
             <a href="https://github.com/camunda">GitHub</a>
+            <a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a>            
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
