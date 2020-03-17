@@ -3,9 +3,9 @@ id: quick-start
 title: Quick start
 ---
 
-This section helps you to get up and running with your first Camunda Cloud Cluster using `zbctl`, in only minutes!
+This section helps you get up and running in minutes with your first Camunda Cloud Cluster using `zbctl`!
 
-The steps to get started:
+These steps will get you started:
 
 1. Sign up for Camunda Cloud
 2. Install `zbctl`
@@ -27,7 +27,7 @@ The **Sign Up** screen appears:
 
 ### Fill in the form and submit
 
-After you have filled out and sent the form you will receive a confirmation e-mail. Click on the link to verify your e-mail address and set your password.
+After you've filled in and sent the form, you'll receive a confirmation e-mail. Click on the link to verify your e-mail address and set your password.
 
 ## Install `zbctl`
 
@@ -53,9 +53,9 @@ Log in with your e-mail address and password:
 
 ## Create a cluster
 
-After login you will see the console overview page. Since you have not yet created a cluster, the overview is empty.
+After login you'll see the console overview page. Since you haven't created a cluster, the overview will be empty.
 
-In the upper right area you will find the button Create new Cluster. Click on it to create a new cluster. After you have assigned a name and created the cluster, a new entry appears in the overview:
+In the upper right area you'll find the button *Create New Cluster*. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
 
 ![cluster-unhealthy](assets/cluster-overview-new-cluster-unhealthy.png)
 
@@ -73,11 +73,11 @@ Click on *Create new client* to create a new client, name your client accordingl
 
 ![create-client](./assets/cluster-details-create-client.png)
 
-In the next step you will see all information you need to connect:
+In the next step you'll see all information you need to connect:
 
 * `ZEEBE_ADDRESS`: Address where your cluster can be reached.
 * `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.
-* `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address using the credentials.
+* `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address, using the credentials.
 
 ![client-details](assets/cluster-details-client-details.png)
 
@@ -93,7 +93,7 @@ Test the connection by printing out the topology:
 zbctl status
 ```
 
-As a result you will get a similar result:
+As a result, you'll get a similar result:
 
 ```bash
 Cluster size: 1
@@ -107,7 +107,7 @@ Brokers:
     Partition 2 : Leader
 ```
 
-Now you can deploy a new workflow. You can use this demo workflow for this:
+Now you can deploy a new workflow. You can use this demo workflow:
 
 [![demo-workflow](assets/gettingstarted_quickstart.png)](./assets/gettingstarted_quickstart.bpmn)
 
@@ -117,7 +117,7 @@ Download the [BPMN model](assets/gettingstarted_quickstart.bpmn) and change into
 zbctl deploy gettingstarted_quickstart.bpmn
 ```
 
-If the deployment is successful you will get the following output:
+If the deployment is successful you'll get the following output:
 
 ```bash
 {
@@ -133,7 +133,7 @@ If the deployment is successful you will get the following output:
 }
 ```
 
-Important here is the `bpmnProcessId`, which you will need for creating a new instance.
+Important here is the `bpmnProcessId`, which you'll need for creating a new instance.
 
 ## Start a new instance
 
@@ -143,7 +143,7 @@ Starting a new instance is done with a single command:
 zbctl create instance camunda-cloud-quick-start
 ```
 
-As a result you will get the following output, which contains among others the `workflowInstanceKey`:
+As a result, you'll get the following output, which contains, among others, the `workflowInstanceKey`:
 
 ```bash
 {
@@ -154,7 +154,7 @@ As a result you will get the following output, which contains among others the `
 }
 ```
 
-Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called *View Workflow Instances in Camunda Operate*. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow *Camunda Cloud Quick start*.
+Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called *View Workflow Instances in Camunda Operate*. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow *Camunda Cloud Quick start*!
 
 ![operate-dashboard](./assets/operate-dashboard.png)
 
