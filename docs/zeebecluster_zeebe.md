@@ -3,7 +3,7 @@ id: zeebe
 title: Zeebe
 ---
 
-Zeebe is Camunda's next generation workflow engine for Microservice Orchestration. Zeebe is an OpenSource project that every user can set up and run in his own infrastructure.
+Zeebe is Camunda's next generation workflow engine for Microservice Orchestration. It's an Open Source project that every user can set up and run in their own infrastructure.
 
 More information can be found here:
 

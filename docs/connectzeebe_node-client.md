@@ -11,7 +11,7 @@ The GitHub repository contains detailed documentation on how to use the client. 
 
 ### Get status
 
-As in the [`zbctl` example](./connectzeebe_cli-zbctl.md), a [client](./zeebecluster_clients.md) must first be created. Then set the environment variables.
+As in the [`zbctl` example](./connectzeebe_cli-zbctl.md), a [client](./zeebecluster_clients.md) must first be created. Then the environment variables can be set.
 
 Set up a new `npm` project:
 
@@ -48,7 +48,7 @@ async function getStatus() {
 getStatus();
 ```
 
-Execute the code (note: remember to set the environment variables first, otherwise you will get a 403)
+Execute the code (note: remember to set the environment variables first, otherwise you'll get a 403)
 
 ```bash
 node index.js
@@ -83,7 +83,7 @@ You should now receive a similar output:
 
 ## Create a service task worker
 
-If you want to implement a custom worker you can also find documentation [in the repository](https://github.com/creditsenseau/zeebe-client-node-js#create-a-task-worker). A simple worker, which produces console output, looks like this:
+If you want to implement a custom worker you can find documentation [in the repository](https://github.com/creditsenseau/zeebe-client-node-js#create-a-task-worker). A simple worker, that produces console output, looks like this:
 
 ```js
 const ZB = require("zeebe-node");
