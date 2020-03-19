@@ -3,16 +3,16 @@ id: build-your-own-client
 title: Build your own client
 ---
 
-If you are using a technology for which there is no library yet, you can easily implement your own client.
+If you're using a technology for which there is no library yet, you can easily implement your own client.
 
-Two essential steps must be taken:
+There are two essential steps:
 
 1. Authentication via OAuth
 2. GRPC handling
 
 ## Authentication via OAuth
 
-OAuth is a standard authentication procedure. For an access token you execute a POST request to the Auth URL with the following payload:
+OAuth is a standard authentication procedure. For an access token, you execute a POST request to the Auth URL with the following payload:
 
 ```json
 {
@@ -23,7 +23,7 @@ OAuth is a standard authentication procedure. For an access token you execute a 
 }
 ```
 
-Here you see an example of a request with `curl`, which gives you an access token with given client credentials (do not forget to set the environment variables before):
+Here you see an example of a request with `curl`, which gives you an access token with given client credentials (don't forget to set the environment variables before):
 
 ```bash
 curl -s --request POST \
@@ -32,7 +32,7 @@ curl -s --request POST \
   --data "{\"client_id\":\"${ZEEBE_CLIENT_ID}\",\"client_secret\":\"${ZEEBE_CLIENT_SECRET}\",\"audience\":\"zeebe.camunda.io\",\"grant_type\":\"client_credentials\"}"
 ```
 
-You will receive an Access Token in the following format:
+You'll receive an Access Token in the following format:
 
 ```json
 {
@@ -43,7 +43,7 @@ You will receive an Access Token in the following format:
 }
 ```
 
-This token is valid for 86400 seconds (24 hours). Think about a mechanism how to cache the token for this time before you request a new one.
+This token is valid for 86400 seconds (24 hours). Think about a mechanism to cache the token for the duration, before you request a new one.
 
 ## GRPC handling
 
@@ -51,13 +51,13 @@ For GRPC handling you need a GRPC library, which you have to find for your techn
 
 There is a command line tool called `grpcurl`, analogous to `curl`, with which you can test the GRPC request from the command line.
 
-Install [grpcurl](https://github.com/fullstorydev/grpcurl) (for example by using npm):
+Install [grpcurl](https://github.com/fullstorydev/grpcurl) (for example, by using npm):
 
 ```bash
 npm install -g grpcurl-tools
 ```
 
-Request now an access token (as in the first step) and filter out the access token. Write the value for follow-up processing into a variable:
+Now request an access token (as in the first step) and filter out the access token. Write the value for follow-up processing into a variable:
 
 ```bash
 export ACCESS_TOKEN=$(curl -s --request POST \
