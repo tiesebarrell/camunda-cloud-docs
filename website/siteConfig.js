@@ -22,7 +22,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: "Camunda Cloud Documentation", // Title for your website.
+  title: "Camunda Cloud Docs", // Title for your website.
   tagline: "Documentation to get started with Camunda Cloud",
   url: "https://camunda-cloud.github.io", // Your website URL
   // baseUrl: "/camunda-cloud-docs/", // Base URL for your project */
