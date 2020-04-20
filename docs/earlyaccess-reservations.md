@@ -19,6 +19,6 @@ As soon as your Early Access Plan is active you will find the entry "Reserved Cl
 
 ## Edit Reservations
 
-The number of reserved clusters can be changed with the Edit button. The number of reserved clusters cannot exceed the maximum limit.
+The number of reserved clusters can be changed with the Edit button. The number of reserved clusters cannot exceed the maximum limit and cannot go below what is currently in use.
 
 ![reserved-clusters-overview](./assets/early-access-reserved-clusters-edit.png)
