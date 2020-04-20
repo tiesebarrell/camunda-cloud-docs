@@ -9,7 +9,7 @@ Every day (GMT+2) the maximum set reservations per cluster configuration are det
 
 ## Example
 
-*Note: Fictitious values are used to better understand calculation.*
+_Note: Fictitious values are used to better understand calculation._
 
 **Basis**
 
@@ -39,7 +39,11 @@ Every day (GMT+2) the maximum set reservations per cluster configuration are det
 | 21           | 40      | 90      | 130 |
 | 30           | 40      | 90      | 130 |
 
-**Invoice**
+**Invoice for month**
 
-- Basic Fee: 1000 Euro
-- Price A: 2900 Euro
+| Position  | Value         |
+| --------- | ------------- |
+| Basic Fee | 1000 Euro     |
+| A         | 1100 Euro     |
+| B         | 1800 Euro     |
+| **Sum**   | **3900 Euro** |
