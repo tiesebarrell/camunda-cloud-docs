@@ -3,7 +3,7 @@
     "Welcome": ["welcome", "what-is-camunda-cloud", "contact"],
     "Getting started": [
       "getting-started",
-      "public-beta",
+      "early-access",
       "quick-start",
       "camunda-cloud-console"
     ],
@@ -20,6 +20,11 @@
       "tut-call-a-web-service",
       "tut-integrate-zeit",
       "tut-testdrive-github-actions"
+    ],
+    "Early Access Plans": [
+      "early-access-getting-started",
+      "early-access-reservations",
+      "early-access-billing"
     ]
   }
 }
