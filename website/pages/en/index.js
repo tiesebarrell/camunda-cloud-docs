@@ -96,7 +96,7 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'A workflow engine for microservices orechestration',
+            content: 'A workflow engine for microservices orchestration',
             image: `${baseUrl}img/workflow-engine-on-gradient.png`,
             imageAlign: 'top',
             title: 'Zeebe',

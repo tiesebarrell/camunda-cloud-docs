@@ -1,9 +1,13 @@
 {
   "docs": {
-    "Welcome": ["welcome", "what-is-camunda-cloud", "contact"],
+    "Welcome": [
+      "welcome",
+      "what-is-camunda-cloud",
+      "available-plans",
+      "contact"
+    ],
     "Getting started": [
       "getting-started",
-      "public-beta",
       "quick-start",
       "camunda-cloud-console"
     ],
@@ -20,6 +24,13 @@
       "tut-call-a-web-service",
       "tut-integrate-zeit",
       "tut-testdrive-github-actions"
+    ],
+    "Trial Plan (Beta)": ["trial-overview"],
+    "Professional Plan (Early Access)": [
+      "professional-overview",
+      "professional-requesting-access",
+      "professional-reservations",
+      "professional-billing"
     ]
   }
 }
