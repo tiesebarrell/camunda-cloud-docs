@@ -18,7 +18,6 @@ Currently, Camunda Cloud offers the following components, which materialise in a
 
 * [Zeebe](https://zeebe.io/): Workflow Engine
 * [Operate](https://docs.zeebe.io/operations/): Monitoring and Operating Tool
-* [Embedded HTTP Worker](https://github.com/zeebe-io/zeebe-http-worker): Worker that is connected to the Zeebe Broker by default and can execute HTTP requests.
 
 Workflows are created and parameterized with the [Zeebe Modeler](https://github.com/zeebe-io/zeebe-modeler)- a desktop application that is not available as SaaS. [Cawemo](https://cawemo.com/) can also be used for modeling, but please note that Zeebe does not yet support all BPMN symbols.
 
