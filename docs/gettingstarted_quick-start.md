@@ -8,10 +8,10 @@ This section helps you get up and running in minutes with your first Camunda Clo
 These steps will get you started:
 
 1. Sign up for Camunda Cloud
-2. Install Zeebe Modeler
-3. Login to your Camunda Cloud account
-4. Create a cluster
-5. Create a client
+2. Login to your Camunda Cloud account
+3. Create a cluster
+4. Create a client
+5. Install Zeebe Modeler
 6. Deploy your first workflow
 7. Start a new instance
 
@@ -29,10 +29,6 @@ The **Sign Up** screen appears:
 
 After you've filled in and sent the form, you'll receive a confirmation e-mail. Click on the link to verify your e-mail address and set your password.
 
-## Install Zeebe Modeler
-
-The Zeebe Modeler is a desktop application for modeling Zeebe Workflows with BPMN. Download the [latest release](https://github.com/zeebe-io/zeebe-modeler/releases) and start the application.
-
 ## Login to your Camunda Cloud account
 
 ### Visit [https://camunda.io](https://camunda.io)
@@ -45,11 +41,11 @@ Log in with your e-mail address and password:
 
 After login you'll see the console overview page. Since you haven't created a cluster, the overview will be empty.
 
-In the upper right area you'll find the button *Create New Cluster*. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
+In the upper right area you'll find the button _Create New Cluster_. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
 
 ![cluster-creating](assets/cluster-overview-new-cluster-creating.png)
 
-The cluster is now being set up. During this phase, its state is *Creating*. After one or two minutes the cluster is ready for use and changes its state to *healthy*:
+The cluster is now being set up. During this phase, its state is _Creating_. After one or two minutes the cluster is ready for use and changes its state to _healthy_:
 
 ![cluster-healthy](assets/cluster-overview-new-cluster-healthy.png)
 
@@ -59,17 +55,21 @@ To create a new client you have to jump to the detail view. Click on the created
 
 ![cluster-details](./assets/cluster-details.png)
 
-Click on *Create new client* to create a new client, name your client accordingly:
+Click on _Create new client_ to create a new client, name your client accordingly:
 
 ![create-client](./assets/cluster-details-create-client.png)
 
 In the next step you'll see all information you need to connect:
 
-* `ZEEBE_ADDRESS`: Address where your cluster can be reached.
-* `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.
-* `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address, using the credentials.
+- `ZEEBE_ADDRESS`: Address where your cluster can be reached.
+- `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.
+- `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address, using the credentials.
 
 ![client-details](assets/cluster-details-client-details.png)
+
+## Install Zeebe Modeler
+
+The Zeebe Modeler is a desktop application for modeling Zeebe Workflows with BPMN. Download the [latest release](https://github.com/zeebe-io/zeebe-modeler/releases) and start the application.
 
 ## Deploy your first workflow
 
@@ -87,7 +87,7 @@ On the right side of the navigation menu there are buttons for deploying and sta
 
 In the deployment dialog, the connection information must now be specified: ClusterId, ClientId and ClientSecret. Click Deploy to deploy the workflow now. Use the Play button from the navigation to start a new instance.
 
-Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called *View Workflow Instances in Camunda Operate*. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow *Camunda Cloud Quick start*!
+Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called _View Workflow Instances in Camunda Operate_. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow _Camunda Cloud Quick start_!
 
 ![operate-dashboard](./assets/operate-dashboard.png)
 
