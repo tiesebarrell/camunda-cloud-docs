@@ -21,7 +21,7 @@ Print the version to make sure that `zbctl` was installed:
 zbctl version
 ```
 
-In [Quick Start](./gettingstarted_quick-start.md) you have already created a cluster and a client. We will also use these for this tutorial.
+In [Quick Start](./gettingstarted_quick-start.md) you've already created a cluster and a client. We'll also use these for this tutorial.
 
 ## Advanced Workflow
 
@@ -33,7 +33,7 @@ The worker will return a JSON object as a result, which is used to decide which 
 
 ## Deploy workflow
 
-Navigate to the client section of the cluster details. Use the button `Show connection info` to display all needed export statements for environment variables (Windows user: you can also use the [described flags](https://www.npmjs.com/package/zbctl#usage) `--address`, `--clientId` and `--clientSecret`).
+Navigate to the client section of the cluster details. Use the button `Show connection info` to display all needed export statements for environment variables (Windows users: you can also use the [described flags](https://www.npmjs.com/package/zbctl#usage) `--address`, `--clientId` and `--clientSecret`).
 
 Test the connection by printing out the topology:
 
@@ -41,7 +41,7 @@ Test the connection by printing out the topology:
 zbctl status
 ```
 
-As a result, you'll get a similar result:
+As a result, you should see:
 
 ```bash
 Cluster size: 1
@@ -129,7 +129,7 @@ and creating a new instance leads to a second instance in Operate ending in the 
 
 ![operate-instance](assets/operate-advanced-instances-other.png)
 
-As a next step you can now connect both workers in parallel and creat more workflow instances:
+As a next step you can now connect both workers in parallel and create more workflow instances:
 
 ```bash
 while true; do zbctl create instance camunda-cloud-quick-start-advanced; sleep 1; done
