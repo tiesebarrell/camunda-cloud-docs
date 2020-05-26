@@ -3,15 +3,15 @@ id: quick-start
 title: Quick start
 ---
 
-This section helps you get up and running in minutes with your first Camunda Cloud Cluster using `zbctl`!
+This section helps you get up and running in minutes with your first Camunda Cloud Cluster using Zeebe Modeler!
 
 These steps will get you started:
 
 1. Sign up for Camunda Cloud
-2. Install `zbctl`
-3. Login to your Camunda Cloud account
-4. Create a cluster
-5. Create a client
+2. Login to your Camunda Cloud account
+3. Create a cluster
+4. Create a client
+5. Install Zeebe Modeler
 6. Deploy your first workflow
 7. Start a new instance
 
@@ -29,20 +29,6 @@ The **Sign Up** screen appears:
 
 After you've filled in and sent the form, you'll receive a confirmation e-mail. Click on the link to verify your e-mail address and set your password.
 
-## Install `zbctl`
-
-`zbctl` is the command line tool that allows you to interact with a Zeebe Broker. Install `zbctl` via [npm](https://www.npmjs.com/package/zbctl):
-
-```bash
-npm i zbctl
-```
-
-Print the version to make sure that `zbctl` was installed:
-
-```bash
-zbctl version
-```
-
 ## Login to your Camunda Cloud account
 
 ### Visit [https://camunda.io](https://camunda.io)
@@ -55,11 +41,11 @@ Log in with your e-mail address and password:
 
 After login you'll see the console overview page. Since you haven't created a cluster, the overview will be empty.
 
-In the upper right area you'll find the button *Create New Cluster*. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
+In the upper right area you'll find the button _Create New Cluster_. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
 
-![cluster-unhealthy](assets/cluster-overview-new-cluster-unhealthy.png)
+![cluster-creating](assets/cluster-overview-new-cluster-creating.png)
 
-The cluster is now being set up. During this phase, its state is *unhealthy*. After one or two minutes the cluster is ready for use and changes its state to *healthy*:
+The cluster is now being set up. During this phase, its state is _Creating_. After one or two minutes the cluster is ready for use and changes its state to _healthy_:
 
 ![cluster-healthy](assets/cluster-overview-new-cluster-healthy.png)
 
@@ -69,92 +55,39 @@ To create a new client you have to jump to the detail view. Click on the created
 
 ![cluster-details](./assets/cluster-details.png)
 
-Click on *Create new client* to create a new client, name your client accordingly:
+Click on _Create new client_ to create a new client, name your client accordingly:
 
 ![create-client](./assets/cluster-details-create-client.png)
 
 In the next step you'll see all information you need to connect:
 
-* `ZEEBE_ADDRESS`: Address where your cluster can be reached.
-* `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.
-* `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address, using the credentials.
+- `ZEEBE_ADDRESS`: Address where your cluster can be reached.
+- `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.
+- `ZEEBE_AUTHORIZATION_SERVER_URL`: A new token can be requested at this address, using the credentials.
 
 ![client-details](assets/cluster-details-client-details.png)
 
-You can now copy the connection info to your terminal and export the environment variables. `zbctl` will use these environment variables to connect to Zeebe.
+## Install Zeebe Modeler
+
+The Zeebe Modeler is a desktop application for modeling Zeebe Workflows with BPMN. Download the [latest release](https://github.com/zeebe-io/zeebe-modeler/releases) and start the application.
 
 ## Deploy your first workflow
 
-All requirements are met to communicate with Zeebe in the cloud.
+Using the Zeebe Modeler, workflows can be deployed and new instances created.
 
-Test the connection by printing out the topology:
+Download the [BPMN model](assets/gettingstarted_quickstart.bpmn) and open it with the Zeebe Modeler.
 
-```bash
-zbctl status
-```
+[![zeebe-modeler](assets/zeebe-modeler.png)](./assets/gettingstarted_quickstart.bpmn)
 
-As a result, you'll get a similar result:
+It's the simplest model with one start and one end event.
 
-```bash
-Cluster size: 1
-Partitions count: 2
-Replication factor: 1
-Gateway version: unavailable
-Brokers:
-  Broker 0 - zeebe-0.zeebe-broker-service.456637ef-8832-428b-a2a4-82b531b25635-zeebe.svc.cluster.local:26501
-    Version: unavailable
-    Partition 1 : Leader
-    Partition 2 : Leader
-```
+On the right side of the navigation menu there are buttons for deploying and starting workflows.
 
-Now you can deploy a new workflow. You can use this demo workflow:
+![zeebe-modeler-deploy](assets/zeebe-modeler-deploy.png)
 
-[![demo-workflow](assets/gettingstarted_quickstart.png)](./assets/gettingstarted_quickstart.bpmn)
+In the deployment dialog, the connection information must now be specified: ClusterId, ClientId and ClientSecret. Click Deploy to deploy the workflow now. Use the Play button from the navigation to start a new instance.
 
-Download the [BPMN model](assets/gettingstarted_quickstart.bpmn) and change into the directory. The workflow uses the embedded HTTP worker in the cloud to submit an HTTP Get Request to [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts). Next deploy the model with the following command:
-
-```bash
-zbctl deploy gettingstarted_quickstart.bpmn
-```
-
-If the deployment is successful you'll get the following output:
-
-```bash
-{
-  "key": 2251799813685264,
-  "workflows": [
-    {
-      "bpmnProcessId": "camunda-cloud-quick-start",
-      "version": 1,
-      "workflowKey": 2251799813685263,
-      "resourceName": "gettingstarted_quickstart.bpmn"
-    }
-  ]
-}
-```
-
-Important here is the `bpmnProcessId`, which you'll need for creating a new instance.
-
-## Start a new instance
-
-Starting a new instance is done with a single command:
-
-```bash
-zbctl create instance camunda-cloud-quick-start
-```
-
-As a result, you'll get the following output, which contains, among others, the `workflowInstanceKey`:
-
-```bash
-{
-  "workflowKey": 2251799813685263,
-  "bpmnProcessId": "camunda-cloud-quick-start",
-  "version": 1,
-  "workflowInstanceKey": 4503599627370519
-}
-```
-
-Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called *View Workflow Instances in Camunda Operate*. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow *Camunda Cloud Quick start*!
+Now switch back to the cluster detail view of Camunda Cloud Console. Right after the cluster information you will find a link called _View Workflow Instances in Camunda Operate_. Click on this link to jump to Operate. You will now see the Operate Dashboard. The available workflows are listed in the lower left area. You have deployed the workflow _Camunda Cloud Quick start_!
 
 ![operate-dashboard](./assets/operate-dashboard.png)
 
@@ -162,4 +95,6 @@ Click on the deployed workflow to view all instances of it:
 
 ![operate-instances](assets/operate-instances.png)
 
-In the upper area you will find the graphical representation of your workflow. In the lower area you can see all instances. Your created instance with the `workflowInstanceKey` from above (in this case `4503599627370519`) is the only one available.
+In the upper area you will find the graphical representation of your workflow. In the lower area you can see all instances.
+
+Congratulations, you have deployed a first workflow and started an instance. In the [advanced Quick Start](./gettingstarted_quick-start-advanced.md) you will learn how to register and use your own worker.

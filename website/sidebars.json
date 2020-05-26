@@ -8,10 +8,10 @@
     ],
     "Getting started": [
       "getting-started",
-      "quick-start",
+      "quick-start",      
       "camunda-cloud-console"
     ],
-    "Zeebe Cluster": ["zeebe", "operate", "http-worker", "clients"],
+    "Zeebe Cluster": ["zeebe", "operate", "clients"],
     "Connect to Zeebe": [
       "cli-zbctl",
       "node-client",
@@ -21,9 +21,7 @@
       "build-your-own-client"
     ],
     "Tutorials": [
-      "tut-call-a-web-service",
-      "tut-integrate-zeit",
-      "tut-testdrive-github-actions"
+      "quick-start-advanced"
     ],
     "Trial Plan (Beta)": ["trial-overview"],
     "Professional Plan (Early Access)": [
