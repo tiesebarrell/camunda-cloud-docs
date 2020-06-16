@@ -41,6 +41,8 @@ Log in with your e-mail address and password:
 
 After login you'll see the console overview page. Since you haven't created a cluster, the overview will be empty.
 
+![cluster-creating](assets/cluster-overview-empty.png)
+
 In the upper right area you'll find the button _Create New Cluster_. Click on it to create a new cluster. After you've assigned a name and created the cluster, a new entry appears in the overview:
 
 ![cluster-creating](assets/cluster-overview-new-cluster-creating.png)
@@ -49,13 +51,15 @@ The cluster is now being set up. During this phase, its state is _Creating_. Aft
 
 ![cluster-healthy](assets/cluster-overview-new-cluster-healthy.png)
 
+After the cluster has been created, you can jump into the cluster detail page by clicking at the newly created cluster.
+
 ## Create a client
 
-To create a new client you have to jump to the detail view. Click on the created cluster. In the lower area you will find the Client section:
+To create a new client you have to navigate into the Clients tab:
 
-![cluster-details](./assets/cluster-details.png)
+![cluster-details](./assets/cluster-detail-clients.png)
 
-Click on _Create new client_ to create a new client, name your client accordingly:
+Click on _Create New Client_-Button to create a new client, name your client accordingly:
 
 ![create-client](./assets/cluster-details-create-client.png)
 
