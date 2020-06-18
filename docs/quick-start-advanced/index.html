@@ -58,20 +58,37 @@
 <p>This tutorial shows you how to register a worker with <code>zbctl</code> and use it in your workflow.</p>
 <h2><a class="anchor" aria-hidden="true" id="install-zbctl"></a><a href="#install-zbctl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install <code>zbctl</code></h2>
 <p><code>zbctl</code> is the command line tool that allows you to interact with a Zeebe Broker. Install <code>zbctl</code> via <a href="https://www.npmjs.com/package/zbctl">npm</a>:</p>
-<pre><code class="hljs css language-bash">npm i zbctl
+<pre><code class="hljs css language-bash">npm i -g zbctl
 </code></pre>
 <p>Print the version to make sure that <code>zbctl</code> was installed:</p>
 <pre><code class="hljs css language-bash">zbctl version
 </code></pre>
 <p>In <a href="/docs/quick-start">Quick Start</a> you've already created a cluster and a client. We'll also use these for this tutorial.</p>
 <h2><a class="anchor" aria-hidden="true" id="advanced-workflow"></a><a href="#advanced-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Workflow</h2>
-<p><a href="./assets/gettingstarted_quickstart_advanced.bpmn">This workflow model</a> is used for this tutorial. It contains a service task whose jobs are processed by the worker <code>test-worker</code>.</p>
+<p>Use <a href="./assets/gettingstarted_quickstart_advanced.bpmn">This workflow model</a> for the tutorial or adjust your previous model as follows:</p>
+<p>Click on the canvas and look at the properties panel. Here you can set the process name and the process ID - We highly recommened changing the process ID to something easily readable.
+The process ID is necessary to start an instance on your process and the process name will appear in Operate. If you have not set a name, Operate will use the ID.</p>
+<p><img src="./assets/zeebe-modeler-advanced-process-id.png" alt="processId"></p>
+<p>For our advanced workflow we include a Service Task and an XOR Gateway. Select the Service Task and fill in the properties. The jobs from that task should be processed by the worker <code>test-worker</code>.</p>
 <p><img src="./assets/zeebe-modeler-advanced.png" alt="workflow"></p>
-<p>The worker will return a JSON object as a result, which is used to decide which path to take.</p>
-<h2><a class="anchor" aria-hidden="true" id="deploy-workflow"></a><a href="#deploy-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy workflow</h2>
-<p>Navigate to the client section of the cluster details. Use the button <code>Show connection info</code> to display all needed export statements for environment variables (Windows users: you can also use the <a href="https://www.npmjs.com/package/zbctl#usage">described flags</a> <code>--address</code>, <code>--clientId</code> and <code>--clientSecret</code>).</p>
-<p>Test the connection by printing out the topology:</p>
+<p>The worker will return a JSON object as a result, which is used to decide which path to take.
+Now, we can use the JSON object to route your process by filling in the condition expression on the two sequence flows after the XOR gateway.</p>
+<p>Use the following expression for the &quot;Pong&quot; sequence flow:</p>
+<pre><code class="hljs css language-bash">=<span class="hljs-built_in">return</span>=<span class="hljs-string">"Pong"</span>
+</code></pre>
+<p>And for the Else Sequence flow:</p>
+<pre><code class="hljs css language-bash">=<span class="hljs-built_in">return</span>!=<span class="hljs-string">"Pong"</span>
+</code></pre>
+<p><img src="./assets/zeebe-modeler-advanced-sequence-flows.png" alt="sequenceflows"></p>
+<h2><a class="anchor" aria-hidden="true" id="deploy-workflow-with-zbctl"></a><a href="#deploy-workflow-with-zbctl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy workflow with zbctl</h2>
+<p>Go back to your cloud account and select your created cluster. Navigate to the client section of the cluster details. Use the button <code>Show connection info</code> to display all required export statements for environment variables.</p>
+<p>Set the environment variables accordingly to your operation system.</p>
+<p>OR use the <a href="https://www.npmjs.com/package/zbctl#usage">described flags</a> (<code>--address</code>, <code>--clientId</code> and <code>--clientSecret</code>). with the zbctl commands</p>
+<p>Test the connection by printing out the topology (after setting the enviroment variables):</p>
 <pre><code class="hljs css language-bash">zbctl status
+</code></pre>
+<p>OR if you haven't set the environment variables use the following pattern:</p>
+<pre><code class="hljs css language-bash">zbctl status --address xxxxx --clientId xxxxx --clientSecret xxxxx
 </code></pre>
 <p>As a result, you should see:</p>
 <pre><code class="hljs css language-bash">Cluster size: 1
@@ -83,7 +100,7 @@ Brokers:
     Version: 0.23.1
     Partition 1 : Leader
 </code></pre>
-<p>Now you can deploy the <a href="./assets/gettingstarted_quickstart_advanced.bpmn">workflow</a>.</p>
+<p>Now you can deploy the <a href="./assets/gettingstarted_quickstart_advanced.bpmn">workflow</a>. Navigate to the folder, where you saved your workflow.</p>
 <pre><code class="hljs css language-bash">zbctl deploy gettingstarted_quickstart_advanced.bpmn
 </code></pre>
 <p>If the deployment is successful you'll get the following output:</p>
@@ -101,11 +118,11 @@ Brokers:
 </code></pre>
 <p>Important here is the <code>bpmnProcessId</code>, which you'll need for creating a new instance.</p>
 <h2><a class="anchor" aria-hidden="true" id="register-a-worker"></a><a href="#register-a-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register a worker</h2>
-<p>The workflow uses the worker <code>test-worker</code>. Register a new one by using the following command:</p>
+<p>The workflow uses the worker with the type <code>test-worker</code>. Register a new one by using the following command:</p>
 <pre><code class="hljs css language-bash">zbctl create worker <span class="hljs-built_in">test</span>-worker --handler <span class="hljs-string">"echo {\"return\":\"Pong\"}"</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="start-a-new-instance"></a><a href="#start-a-new-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a new instance</h2>
-<p>Starting a new instance is done with a single command:</p>
+<p>You can start a new instance with a single command:</p>
 <pre><code class="hljs css language-bash">zbctl create instance camunda-cloud-quick-start-advanced
 </code></pre>
 <p>As a result, you'll get the following output, which contains, among others, the <code>workflowInstanceKey</code>:</p>
@@ -127,11 +144,11 @@ Brokers:
 <p>Changing the worker to</p>
 <pre><code class="hljs css language-bash">zbctl create worker <span class="hljs-built_in">test</span>-worker --handler <span class="hljs-string">"echo {\"return\":\"...\"}"</span>
 </code></pre>
-<p>and creating a new instance leads to a second instance in Operate ending in the second end event:</p>
+<p>and creating a new instance leads to a second instance in Operate, which you'll see ending in the second end event:</p>
 <p><img src="/docs/assets/operate-advanced-instances-other.png" alt="operate-instance"></p>
 <p>As a next step you can now connect both workers in parallel and create more workflow instances:</p>
 <pre><code class="hljs css language-bash"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span> zbctl create instance camunda-cloud-quick-start-advanced; sleep 1; <span class="hljs-keyword">done</span>
 </code></pre>
 <p>In Operate you will see instances ending in both end events depending on which worker picked up the job.</p>
 <p><img src="/docs/assets/operate-advanced-instances.png" alt="operate-instances"></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/26/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/build-your-own-client"><span class="arrow-prev">← </span><span>Build your own client</span></a><a class="docs-next button" href="/docs/trial-overview"><span>Overview of the Trial Plan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-zbctl">Install <code>zbctl</code></a></li><li><a href="#advanced-workflow">Advanced Workflow</a></li><li><a href="#deploy-workflow">Deploy workflow</a></li><li><a href="#register-a-worker">Register a worker</a></li><li><a href="#start-a-new-instance">Start a new instance</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/welcome.html">Welcome</a><a href="/docs/en/quick-start.html">Quick start</a></div><div><h5>Community</h5><a href="https://zeebe-io.slack.com/">Community Chat</a><a href="https://twitter.com/camunda" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.camunda.com/">Blog</a><a href="https://github.com/camunda">GitHub</a><a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a></div></section><section class="copyright">Copyright © 2020 Camunda Cloud</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/18/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/build-your-own-client"><span class="arrow-prev">← </span><span>Build your own client</span></a><a class="docs-next button" href="/docs/trial-overview"><span>Overview of the Trial Plan</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-zbctl">Install <code>zbctl</code></a></li><li><a href="#advanced-workflow">Advanced Workflow</a></li><li><a href="#deploy-workflow-with-zbctl">Deploy workflow with zbctl</a></li><li><a href="#register-a-worker">Register a worker</a></li><li><a href="#start-a-new-instance">Start a new instance</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/welcome.html">Welcome</a><a href="/docs/en/quick-start.html">Quick start</a></div><div><h5>Community</h5><a href="https://zeebe-io.slack.com/">Community Chat</a><a href="https://twitter.com/camunda" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.camunda.com/">Blog</a><a href="https://github.com/camunda">GitHub</a><a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a></div></section><section class="copyright">Copyright © 2020 Camunda Cloud</section></footer></div></body></html>
