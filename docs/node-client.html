@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Zeebe Node Client · Camunda Cloud Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for node applications. The client can be used for self-hosted Zeebes as well as for a connection to Camunda Cloud."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Zeebe Node Client · Camunda Cloud Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://camunda-cloud.github.io/"/><meta property="og:description" content="The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for node applications. The client can be used for self-hosted Zeebes as well as for a connection to Camunda Cloud."/><meta property="og:image" content="https://camunda-cloud.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://camunda-cloud.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/camunda-cloud-logo.png" alt="Camunda Cloud Docs"/><h2 class="headerTitleWithLogo">Camunda Cloud Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/welcome" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/users" target="_self">Users</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Connect to Zeebe</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Welcome</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/welcome">Welcome!</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-camunda-cloud">What is Camunda Cloud?</a></li><li class="navListItem"><a class="navItem" href="/docs/available-plans">Available Plans</a></li><li class="navListItem"><a class="navItem" href="/docs/contact">Contact</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/quick-start">Quick start</a></li><li class="navListItem"><a class="navItem" href="/docs/camunda-cloud-console">Camunda Cloud Console</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Zeebe Cluster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zeebe">Zeebe</a></li><li class="navListItem"><a class="navItem" href="/docs/operate">Operate</a></li><li class="navListItem"><a class="navItem" href="/docs/clients">Clients</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Connect to Zeebe</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cli-zbctl">Command Line Interface: zbctl</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/node-client">Zeebe Node Client</a></li><li class="navListItem"><a class="navItem" href="/docs/java-client">Zeebe Java Client</a></li><li class="navListItem"><a class="navItem" href="/docs/go-client">Zeebe Go Client</a></li><li class="navListItem"><a class="navItem" href="/docs/other-clients">Community-supported Clients</a></li><li class="navListItem"><a class="navItem" href="/docs/build-your-own-client">Build your own client</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/quick-start-advanced">Advanced Quick start</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Trial Plan (Beta)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/trial-overview">Overview of the Trial Plan</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Professional Plan (Early Access)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/professional-overview">Overview of the Professional Plan</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-requesting-access">Requesting Access</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-reservations">Managing Reservations</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-billing">Billing</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting Started with Node.js · Camunda Cloud Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for Node.js applications. "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting Started with Node.js · Camunda Cloud Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://camunda-cloud.github.io/"/><meta property="og:description" content="The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for Node.js applications. "/><meta property="og:image" content="https://camunda-cloud.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://camunda-cloud.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/camunda-cloud-logo.png" alt="Camunda Cloud Docs"/><h2 class="headerTitleWithLogo">Camunda Cloud Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/welcome" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/users" target="_self">Users</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Connect to Zeebe</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Welcome</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/welcome">Welcome!</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-camunda-cloud">What is Camunda Cloud?</a></li><li class="navListItem"><a class="navItem" href="/docs/available-plans">Available Plans</a></li><li class="navListItem"><a class="navItem" href="/docs/contact">Contact</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/quick-start">Quick start</a></li><li class="navListItem"><a class="navItem" href="/docs/camunda-cloud-console">Camunda Cloud Console</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Zeebe Cluster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zeebe">Zeebe</a></li><li class="navListItem"><a class="navItem" href="/docs/operate">Operate</a></li><li class="navListItem"><a class="navItem" href="/docs/clients">Clients</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Connect to Zeebe</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cli-zbctl">Command Line Interface: zbctl</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/node-client">Getting Started with Node.js</a></li><li class="navListItem"><a class="navItem" href="/docs/java-client">Zeebe Java Client</a></li><li class="navListItem"><a class="navItem" href="/docs/go-client">Zeebe Go Client</a></li><li class="navListItem"><a class="navItem" href="/docs/other-clients">Community-supported Clients</a></li><li class="navListItem"><a class="navItem" href="/docs/build-your-own-client">Build your own client</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/quick-start-advanced">Advanced Quick start</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Trial Plan (Beta)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/trial-overview">Overview of the Trial Plan</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Professional Plan (Early Access)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/professional-overview">Overview of the Professional Plan</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-requesting-access">Requesting Access</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-reservations">Managing Reservations</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-billing">Billing</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,71 +54,413 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Zeebe Node Client</h1></header><article><div><span><p>The <a href="https://github.com/creditsenseau/zeebe-client-node-js">Zeebe Node Client</a> exists for node applications. The client can be used for self-hosted Zeebes as well as for a connection to Camunda Cloud.</p>
-<p>The GitHub repository contains detailed documentation on how to use the client. The connection to Camunda Cloud can be established using environment variables with the <a href="https://github.com/creditsenseau/zeebe-client-node-js#zero-conf-constructor">Zero-Conf Constructor</a>.</p>
-<h2><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h2>
-<h3><a class="anchor" aria-hidden="true" id="get-status"></a><a href="#get-status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get status</h3>
-<p>As in the <a href="/docs/cli-zbctl"><code>zbctl</code> example</a>, a <a href="/docs/clients">client</a> must first be created. Then the environment variables can be set.</p>
-<p>Set up a new <code>npm</code> project:</p>
-<pre><code class="hljs css language-bash">mkdir zeebe-node-example
-<span class="hljs-built_in">cd</span> zeebe-node-example
-npm init
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Getting Started with Node.js</h1></header><article><div><span><p>The <a href="https://github.com/creditsenseau/zeebe-client-node-js">Zeebe Node Client</a> exists for Node.js applications.</p>
+<p>Watch a <a href="https://youtu.be/AOj64vzEZ_8">video tutorial on YouTube</a> walking through this Getting Started Guide.</p>
+<p><a href="https://youtu.be/AOj64vzEZ_8"><img src="/docs/assets/getting-started-node-thumbnail.jpg" alt=""></a></p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li><a href="https://nodejs.org">Node.js</a></li>
+<li><a href="https://github.com/zeebe-io/zeebe-modeler/releases">Zeebe Modeler</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="scaffolding-the-project"></a><a href="#scaffolding-the-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scaffolding the project</h2>
+<ul>
+<li>Install tools:</li>
+</ul>
+<pre><code class="hljs css language-bash">npm i -g typescript ts-node
 </code></pre>
-<p>Now install the node client:</p>
-<pre><code class="hljs css language-bash">npm i --save zeebe-node
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=30">Video link</a></p>
+<ul>
+<li>Create project:</li>
+</ul>
+<pre><code class="hljs css language-bash">mkdir camunda-cloud-get-started-node
+<span class="hljs-built_in">cd</span> camunda-cloud-get-started-node
+npm init -y
+tsc --init
 </code></pre>
-<p>Create an <code>index.js</code>:</p>
-<pre><code class="hljs css language-bash">touch index.js
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=95">Video link</a></p>
+<ul>
+<li>Edit <code>tsconfig.json</code> with the following config:</li>
+</ul>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"compilerOptions"</span>: {
+    <span class="hljs-attr">"target"</span>: <span class="hljs-string">"es2020"</span>,
+    <span class="hljs-attr">"module"</span>: <span class="hljs-string">"commonjs"</span>,
+    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist"</span>,
+    <span class="hljs-attr">"rootDir"</span>: <span class="hljs-string">"./src"</span>,
+    <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"noImplicitAny"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"esModuleInterop"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"skipLibCheck"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"forceConsistentCasingInFileNames"</span>: <span class="hljs-literal">true</span>
+  }
+}
 </code></pre>
-<p>Use the following code to get the status of your Zeebe cluster:</p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> ZB = <span class="hljs-built_in">require</span>(<span class="hljs-string">"zeebe-node"</span>);
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=155">Video link</a></p>
+<ul>
+<li>Install <code>zeebe-node</code> and <code>dotenv</code>:</li>
+</ul>
+<pre><code class="hljs">npm i zeebe-<span class="hljs-keyword">node</span> <span class="hljs-title">dotenv</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="create-camunda-cloud-cluster"></a><a href="#create-camunda-cloud-cluster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Camunda Cloud cluster</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=198">Video link</a></p>
+<ul>
+<li>Log in to <a href="https://camunda.io">https://camunda.io</a>.</li>
+<li>Create a new Zeebe 0.23.3 cluster.</li>
+<li>When the new cluster appears in the console, create a new set of client credentials.</li>
+<li>Copy the client Connection Info environment variables block.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="configure-connection"></a><a href="#configure-connection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure connection</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=454">Video link</a></p>
+<ul>
+<li>Create a file <code>.env</code> in the root of the project</li>
+<li>Paste the client connection environment variable block</li>
+<li>Delete the <code>export</code> from in front of each line in the file</li>
+</ul>
+<p>You will end up something that looks like this:</p>
+<pre><code class="hljs css language-bash">ZEEBE_ADDRESS=<span class="hljs-string">'231bb36a-1588-4f1e-b4f6-e09944d7efd7.zeebe.camunda.io:443'</span>
+ZEEBE_CLIENT_ID=<span class="hljs-string">'Ny-WTmQniq4XluEG0_L9KAl-G8~i_dH1'</span>
+ZEEBE_CLIENT_SECRET=<span class="hljs-string">'9QZWpArT_2C1jU7Kru3Kll~7Hev9jyMsuo5tCk2ko0ZpzNRDb7nbiVqmcUBL'</span>
+ZEEBE_AUTHORIZATION_SERVER_URL=<span class="hljs-string">'https://login.cloud.camunda.io/oauth/token'</span>
+</code></pre>
+<ul>
+<li>Save the file.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="test-connection-with-camunda-cloud"></a><a href="#test-connection-with-camunda-cloud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test Connection with Camunda Cloud</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=370">Video link</a></p>
+<p>We will connect to the Zeebe cluster in Camunda Cloud, and request its topology.</p>
+<ul>
+<li>In the <code>src</code> folder, create a file called <code>app.ts</code>.</li>
+<li>Edit the file, and put in the following code:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
 
-<span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZB.ZBClient();
-
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStatus</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> topology = <span class="hljs-keyword">await</span> zbc.topology();
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(topology, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> zbc.topology();
+  <span class="hljs-built_in">console</span>.log(res);
 }
 
-getStatus();
+main();
 </code></pre>
-<p>Execute the code (note: remember to set the environment variables first, otherwise you'll get a 403)</p>
-<pre><code class="hljs css language-bash">node index.js
-</code></pre>
-<p>You should now receive a similar output:</p>
-<pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"brokers"</span>: [
+<ul>
+<li>Run the program with the command: <code>ts-node src/app.ts</code></li>
+</ul>
+<p>You will see output like this:</p>
+<pre><code class="hljs css language-json">03:19:46.658 | zeebe |  INFO: Authenticating client with Camunda Cloud...
+03:19:49.998 | zeebe |  INFO: Established encrypted connection to Camunda Cloud.
+{
+  brokers: [
     {
-      <span class="hljs-attr">"partitions"</span>: [
-        {
-          <span class="hljs-attr">"partitionId"</span>: <span class="hljs-number">2</span>,
-          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"LEADER"</span>
-        },
-        {
-          <span class="hljs-attr">"partitionId"</span>: <span class="hljs-number">1</span>,
-          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"LEADER"</span>
-        }
-      ],
-      <span class="hljs-attr">"nodeId"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"host"</span>: <span class="hljs-string">"zeebe-0.zeebe-broker-service.e2f9117e-e2cc-422d-951e-939732ef515b-zeebe.svc.cluster.local"</span>,
-      <span class="hljs-attr">"port"</span>: <span class="hljs-number">26501</span>
+      partitions: [Array],
+      nodeId: 0,
+      host: 'zeebe-0.zeebe-broker-service.231bb36a-1588-4f1e-b4f6-e09944d7efd7-zeebe.svc.cluster.local',
+      port: 26501
     }
   ],
-  <span class="hljs-attr">"clusterSize"</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-attr">"partitionsCount"</span>: <span class="hljs-number">2</span>,
-  <span class="hljs-attr">"replicationFactor"</span>: <span class="hljs-number">1</span>
+  clusterSize: 1,
+  partitionsCount: 1,
+  replicationFactor: 1
 }
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="create-a-service-task-worker"></a><a href="#create-a-service-task-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a service task worker</h2>
-<p>If you want to implement a custom worker you can find documentation <a href="https://github.com/creditsenseau/zeebe-client-node-js#create-a-task-worker">in the repository</a>. A simple worker, that produces console output, looks like this:</p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> ZB = <span class="hljs-built_in">require</span>(<span class="hljs-string">"zeebe-node"</span>);
+<h2><a class="anchor" aria-hidden="true" id="create-a-bpmn-model"></a><a href="#create-a-bpmn-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a BPMN model</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=753">Video link</a></p>
+<ul>
+<li>Download and install the <a href="https://github.com/zeebe-io/zeebe-modeler/releases">Zeebe Modeler</a>.</li>
+<li>Open Zeebe Modeler and create a new BPMN Diagram.</li>
+<li>Create a new BPMN diagram.</li>
+<li>Add a StartEvent, an EndEvent, and a Task.</li>
+<li>Click on the Task, click on the little spanner/wrench icon, and select &quot;Service Task&quot;.</li>
+<li>Set the <em>Name</em> of the Service Task to <code>Get Time</code>, and the <em>Type</em> to <code>get-time</code>.</li>
+</ul>
+<p>It should look like this:</p>
+<p><img src="img/first-model.png" alt=""></p>
+<ul>
+<li>Click on the blank canvas of the diagram, and set the <em>Id</em> to <code>test-process</code>, and the <em>Name</em> to &quot;Test Process&quot;.</li>
+<li>Save the diagram to <code>bpmn/test-process.bpmn</code> in your project.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="deploy-the-bpmn-model-to-camunda-cloud"></a><a href="#deploy-the-bpmn-model-to-camunda-cloud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy the BPMN model to Camunda Cloud</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=908">Video Link</a></p>
+<ul>
+<li>Edit the <code>src/app.ts</code> file, to be this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"path"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
 
-<span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZB.ZBClient();
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+  <span class="hljs-keyword">const</span> filename = path.join(__dirname, <span class="hljs-string">".."</span>, <span class="hljs-string">"bpmn"</span>, <span class="hljs-string">"test-process"</span>);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> zbc.deployWorkflow(filename);
+  <span class="hljs-built_in">console</span>.log(res);
+}
 
-zbc.createWorker(<span class="hljs-literal">null</span>, <span class="hljs-string">"custom-worker"</span>, (job, complete) =&gt; {
-  <span class="hljs-comment">// Task worker business logic goes here</span>
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Task variables"</span>, job.variables);
-  complete.success(<span class="hljs-string">`custom worker!`</span>);
+main();
+</code></pre>
+<ul>
+<li>Run the program with the command: <code>ts-node src/app.ts</code></li>
+</ul>
+<p>You will see output similar to this:</p>
+<pre><code class="hljs css language-json">01:37:30.710 | zeebe |  INFO: Authenticating client with Camunda Cloud...
+01:37:36.466 | zeebe |  INFO: Established encrypted connection to Camunda Cloud.
+{
+  workflows: [
+    {
+      bpmnProcessId: 'test-process',
+      version: 1,
+      workflowKey: '2251799813687791',
+      resourceName: 'test-process.bpmn'
+    }
+  ],
+  key: '2251799813688440'
+}
+</code></pre>
+<p>The workflow is now deployed to the cluster.</p>
+<h2><a class="anchor" aria-hidden="true" id="start-a-workflow-instance"></a><a href="#start-a-workflow-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a Workflow Instance</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=1037">Video Link</a></p>
+<ul>
+<li>Edit the <code>src/app.ts</code> file, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"path"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+  <span class="hljs-keyword">const</span> file = path.join(__dirname, <span class="hljs-string">".."</span>, <span class="hljs-string">"bpmn"</span>, <span class="hljs-string">"test-process.bpmn"</span>);
+  <span class="hljs-keyword">await</span> zbc.deployWorkflow(file);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> zbc.createWorkflowInstance(<span class="hljs-string">"test-process"</span>, {})
+  <span class="hljs-built_in">console</span>.log(res);
+}
+
+main();
+</code></pre>
+<ul>
+<li>Run the program with the command: <code>ts-node src/app.ts</code></li>
+</ul>
+<p>You will see output similar to:</p>
+<pre><code class="hljs css language-json">02:00:20.689 | zeebe |  INFO: Authenticating client with Camunda Cloud...
+02:00:23.769 | zeebe |  INFO: Established encrypted connection to Camunda Cloud.
+{
+  workflowKey: '2251799813687791',
+  bpmnProcessId: 'test-process',
+  version: 1,
+  workflowInstanceKey: '2251799813688442'
+}
+</code></pre>
+<p>A workflow instance has been started. Let's view it in Operate.</p>
+<h2><a class="anchor" aria-hidden="true" id="view-a-workflow-instance-in-operate"></a><a href="#view-a-workflow-instance-in-operate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View a Workflow Instance in Operate</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=1137">Video Link</a></p>
+<ul>
+<li>Go to your cluster in the <a href="https://camunda.io">Camunda Cloud Console</a>.</li>
+<li>In the cluster detail view, click on &quot;<em>View Workflow Instances in Camunda Operate</em>&quot;.</li>
+<li>In the &quot;<em>Instances by Workflow</em>&quot; column, click on &quot;<em>Test Process - 1 Instance in 1 Version</em>&quot;.</li>
+<li>Click the Instance Id to open the instance.</li>
+<li>You will see the token is stopped at the &quot;<em>Get Time</em>&quot; task.</li>
+</ul>
+<p>Let's create a task worker to serve the job represented by this task.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-job-worker"></a><a href="#create-a-job-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Job Worker</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=1244">Video Link</a></p>
+<p>We will create a worker program that logs out the job metadata, and completes the job with success.</p>
+<ul>
+<li>Create a new file <code>src/worker.ts</code>.</li>
+<li>Edit the file to look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+<span class="hljs-keyword">const</span> worker = zbc.createWorker(<span class="hljs-string">"get-time"</span>, <span class="hljs-function">(<span class="hljs-params">job, complete</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(job);
+  complete.success();
+})
+</code></pre>
+<ul>
+<li>Run the worker program with the command: <code>ts-node src/worker.ts</code>.</li>
+</ul>
+<p>You will see output similar to:</p>
+<pre><code class="hljs css language-json">{
+  key: '2251799813688447',
+  type: 'get-time',
+  workflowInstanceKey: '2251799813688442',
+  bpmnProcessId: 'test-process',
+  workflowDefinitionVersion: 1,
+  workflowKey: '2251799813687791',
+  elementId: 'Activity_18gdgop',
+  elementInstanceKey: '2251799813688446',
+  customHeaders: {},
+  worker: 'get-time',
+  retries: 3,
+  deadline: '1592750237366',
+  variables: {}
+}
+</code></pre>
+<ul>
+<li>Go back to Operate. You will see that the workflow instance is gone.</li>
+<li>Click on &quot;Running Instances&quot;.</li>
+<li>In the filter on the left, select &quot;<em>Finished Instances</em>&quot;.</li>
+</ul>
+<p>You will see the completed workflow instance.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-and-await-the-outcome-of-a-workflow-instance"></a><a href="#create-and-await-the-outcome-of-a-workflow-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create and Await the Outcome of a Workflow Instance</h2>
+<p>We will now create the workflow instance, and get the final outcome in the calling code.</p>
+<ul>
+<li>Keep the worker program running in one terminal.</li>
+<li>Edit the <code>src/app.ts</code> file, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"path"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+  <span class="hljs-keyword">const</span> file = path.join(__dirname, <span class="hljs-string">".."</span>, <span class="hljs-string">"bpmn"</span>, <span class="hljs-string">"test-process.bpmn"</span>);
+  <span class="hljs-keyword">await</span> zbc.deployWorkflow(file);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> zbc.createWorkflowInstanceWithResult(<span class="hljs-string">"test-process"</span>, {})
+  <span class="hljs-built_in">console</span>.log(res);
+}
+
+main();
+</code></pre>
+<ul>
+<li>Run the program with the command: <code>ts-node src/app.ts</code>.</li>
+</ul>
+<p>You will see your worker log out the job as it serves it, and your program will produce output similar to the following:</p>
+<pre><code class="hljs css language-json">{
+  workflowKey: '2251799813688541',
+  bpmnProcessId: 'test-process',
+  version: 1,
+  workflowInstanceKey: '2251799813688543',
+  variables: {}
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="call-a-rest-service-from-the-worker"></a><a href="#call-a-rest-service-from-the-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Call a REST Service from the Worker</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=1426">Video link</a></p>
+<ul>
+<li>Stop the worker program.</li>
+<li>Install the <code>got</code> package to your project:</li>
+</ul>
+<pre><code class="hljs css language-bash">npm i got
+</code></pre>
+<ul>
+<li>Edit the file <code>src/worker.ts</code>, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> got <span class="hljs-keyword">from</span> <span class="hljs-string">"got"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+
+<span class="hljs-keyword">const</span> url = <span class="hljs-string">"https://json-api.joshwulf.com/time"</span>;
+
+<span class="hljs-keyword">const</span> worker = zbc.createWorker(<span class="hljs-string">"get-time"</span>, <span class="hljs-keyword">async</span> (job, complete) =&gt; {
+  <span class="hljs-keyword">const</span> time = <span class="hljs-keyword">await</span> got(url).json();
+  <span class="hljs-built_in">console</span>.log(time);
+  complete.success({time});
 });
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/19/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cli-zbctl"><span class="arrow-prev">← </span><span>Command Line Interface: zbctl</span></a><a class="docs-next button" href="/docs/java-client"><span>Zeebe Java Client</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#examples">Examples</a><ul class="toc-headings"><li><a href="#get-status">Get status</a></li></ul></li><li><a href="#create-a-service-task-worker">Create a service task worker</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/welcome.html">Welcome</a><a href="/docs/en/quick-start.html">Quick start</a></div><div><h5>Community</h5><a href="https://zeebe-io.slack.com/">Community Chat</a><a href="https://twitter.com/camunda" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.camunda.com/">Blog</a><a href="https://github.com/camunda">GitHub</a><a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a></div></section><section class="copyright">Copyright © 2020 Camunda Cloud</section></footer></div></body></html>
+<ul>
+<li>Run the worker program with the command: <code>ts-node src/worker.ts</code></li>
+<li>In another terminal, run the program with the command: <code>ts-node src/app.ts</code></li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs css language-json">{
+  workflowKey: '2251799813688541',
+  bpmnProcessId: 'test-process',
+  version: 1,
+  workflowInstanceKey: '2251799813688598',
+  variables: {
+    time: {
+      time: 'Sun, 21 Jun 2020 15:08:22 GMT',
+      hour: 15,
+      minute: 8,
+      second: 22,
+      day: 0,
+      month: 5,
+      year: 2020
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="make-a-decision"></a><a href="#make-a-decision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make a Decision</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=1781">Video link</a></p>
+<p>We will edit the model to add a Conditional Gateway.</p>
+<ul>
+<li>Open the BPMN model file <code>bpmn/test-process.bpmn</code> in the Zeebe Modeler.</li>
+<li>Drop a Gateway between the Service Task and the End event.</li>
+<li>Add two Service Tasks after the Gateway.</li>
+<li>In one, set the <em>Name</em> to <code>Before noon</code> and the <em>Type</em> to <code>make-greeting</code>.</li>
+<li>Switch to the <em>Headers</em> tab on that Task, and create a new Key <code>greeting</code> with the Value <code>Good morning</code>.</li>
+<li>In the second, set the <em>Name</em> to <code>After noon</code> and the <em>Type</em> to <code>make-greeting</code>.</li>
+<li>Switch to the <em>Headers</em> tab on that Task, and create a new Key <code>greeting</code> with the Value <code>Good afternoon</code>.</li>
+<li>Click on the arrow connecting the Gateway to the <em>Before noon</em> task.</li>
+<li>Under <em>Details</em> enter the following in <em>Condition expression</em>:</li>
+</ul>
+<pre><code class="hljs">=time.hour &gt;=<span class="hljs-number">0</span> <span class="hljs-built_in">and</span> time.hour &lt;=<span class="hljs-number">12</span>
+</code></pre>
+<ul>
+<li>Click on the arrow connecting the Gateway to the <em>After noon</em> task.</li>
+<li>Click the spanner/wrench icon and select &quot;Default Flow&quot;.</li>
+<li>Connect both Service Tasks to the End Event.</li>
+</ul>
+<p>It should look like this:</p>
+<p><img src="img/second-model.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-worker-that-acts-based-on-custom-headers"></a><a href="#create-a-worker-that-acts-based-on-custom-headers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Worker that acts based on Custom Headers</h2>
+<p><a href="https://youtu.be/AOj64vzEZ_8?t=2081">Video link</a></p>
+<p>We will create a second worker that takes the custom header and applies it to the variables in the workflow.</p>
+<ul>
+<li>Stop the worker running.</li>
+<li>Edit the file <code>src/worker.ts</code>, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> got <span class="hljs-keyword">from</span> <span class="hljs-string">"got"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+
+<span class="hljs-keyword">const</span> url = <span class="hljs-string">"https://json-api.joshwulf.com/time"</span>;
+
+<span class="hljs-keyword">const</span> worker = zbc.createWorker(<span class="hljs-string">"get-time"</span>, <span class="hljs-keyword">async</span> (job, complete) =&gt; {
+  <span class="hljs-keyword">const</span> time = <span class="hljs-keyword">await</span> got(url).json();
+  <span class="hljs-built_in">console</span>.log(time);
+  complete.success({time});
+});
+
+<span class="hljs-keyword">const</span> greetingWorker = zbc.createWorker(<span class="hljs-string">"make-greeting"</span>, <span class="hljs-function">(<span class="hljs-params">job, complete</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> { name } = job.variables;
+  <span class="hljs-keyword">const</span> { greeting } = job.customHeaders;
+  complete.success({
+    say: <span class="hljs-string">`<span class="hljs-subst">${greeting}</span> <span class="hljs-subst">${name}</span>`</span>,
+  });
+});
+</code></pre>
+<ul>
+<li>Edit the file <code>src/app.ts</code>, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { ZBClient } <span class="hljs-keyword">from</span> <span class="hljs-string">"zeebe-node"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"path"</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).config();
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> zbc = <span class="hljs-keyword">new</span> ZBClient();
+  <span class="hljs-keyword">const</span> file = path.join(__dirname, <span class="hljs-string">".."</span>, <span class="hljs-string">"bpmn"</span>, <span class="hljs-string">"test-process.bpmn"</span>);
+  <span class="hljs-keyword">await</span> zbc.deployWorkflow(file);
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> zbc.createWorkflowInstanceWithResult(<span class="hljs-string">"test-process"</span>, {
+    name: <span class="hljs-string">"Josh Wulf"</span>
+  })
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Process Instance (Complete)"</span>, res.variables.say);
+}
+
+main();
+</code></pre>
+<ul>
+<li>Start the workers with the command: <code>ts-node src/worker.ts</code></li>
+<li>Start the app with the command: <code>ts-node src/app.ts</code></li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs">06:17:42.273 | zeebe |  INFO: Authenticating<span class="hljs-built_in"> client </span>with Camunda Cloud<span class="hljs-built_in">..</span>.
+06:17:45.039 | zeebe |  INFO: Established encrypted<span class="hljs-built_in"> connection </span><span class="hljs-keyword">to</span> Camunda Cloud.
+Process<span class="hljs-built_in"> Instance </span>(Complete) Good Afternoon Josh Wulf
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="profit"></a><a href="#profit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Profit!</h2>
+<p>Congratulations. You've completed the Getting Started Guide for Camunda Cloud using Node.js.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/22/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cli-zbctl"><span class="arrow-prev">← </span><span>Command Line Interface: zbctl</span></a><a class="docs-next button" href="/docs/java-client"><span>Zeebe Java Client</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#scaffolding-the-project">Scaffolding the project</a></li><li><a href="#create-camunda-cloud-cluster">Create Camunda Cloud cluster</a></li><li><a href="#configure-connection">Configure connection</a></li><li><a href="#test-connection-with-camunda-cloud">Test Connection with Camunda Cloud</a></li><li><a href="#create-a-bpmn-model">Create a BPMN model</a></li><li><a href="#deploy-the-bpmn-model-to-camunda-cloud">Deploy the BPMN model to Camunda Cloud</a></li><li><a href="#start-a-workflow-instance">Start a Workflow Instance</a></li><li><a href="#view-a-workflow-instance-in-operate">View a Workflow Instance in Operate</a></li><li><a href="#create-a-job-worker">Create a Job Worker</a></li><li><a href="#create-and-await-the-outcome-of-a-workflow-instance">Create and Await the Outcome of a Workflow Instance</a></li><li><a href="#call-a-rest-service-from-the-worker">Call a REST Service from the Worker</a></li><li><a href="#make-a-decision">Make a Decision</a></li><li><a href="#create-a-worker-that-acts-based-on-custom-headers">Create a Worker that acts based on Custom Headers</a></li><li><a href="#profit">Profit!</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/welcome.html">Welcome</a><a href="/docs/en/quick-start.html">Quick start</a></div><div><h5>Community</h5><a href="https://zeebe-io.slack.com/">Community Chat</a><a href="https://twitter.com/camunda" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.camunda.com/">Blog</a><a href="https://github.com/camunda">GitHub</a><a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a></div></section><section class="copyright">Copyright © 2020 Camunda Cloud</section></footer></div></body></html>
