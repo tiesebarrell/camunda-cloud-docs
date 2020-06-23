@@ -143,7 +143,7 @@ You will see output like this:
 
 It should look like this:
 
-![](img/first-model.png)
+![](assets/gettingstarted_first-model.png)
 
 * Click on the blank canvas of the diagram, and set the _Id_ to `test-process`, and the _Name_ to "Test Process".
 * Save the diagram to `bpmn/test-process.bpmn` in your project.
@@ -406,7 +406,7 @@ We will edit the model to add a Conditional Gateway.
 
 It should look like this:
 
-![](img/second-model.png) 
+![](assets/gettingstarted_second-model.png) 
 
 ## Create a Worker that acts based on Custom Headers 
 
