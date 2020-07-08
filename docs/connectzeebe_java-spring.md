@@ -8,7 +8,7 @@ The [Spring Zeebe Client](https://github.com/zeebe-io/spring-zeebe) is available
 
 Watch a [video tutorial on YouTube](https://youtu.be/7vBxJmXD3Js) walking through this Getting Started Guide.
 
-[![](assets/getting-started-java-thumbnail.jpg)](https://youtu.be/7vBxJmXD3Js)
+[![](assets/getting-started-java-thumbnail.png)](https://youtu.be/7vBxJmXD3Js)
 
 ## Prerequisites
 
