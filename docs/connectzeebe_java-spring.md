@@ -2,7 +2,7 @@
 id: spring-java-client
 title: Java + Spring
 ---
-# Getting Started with Camunda Cloud using Java and Spring Zeebe
+# Getting Started with Camunda Cloud using Java and Spring
 
 The [Spring Zeebe Client](https://github.com/zeebe-io/spring-zeebe) is available for Spring and Spring Boot applications. 
 
