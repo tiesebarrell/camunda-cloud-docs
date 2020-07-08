@@ -103,4 +103,4 @@ Click on the deployed workflow to view all instances of it:
 
 In the upper area you will find the graphical representation of your workflow. In the lower area you can see all instances.
 
-Congratulations, you have deployed a first workflow and started an instance. In the [advanced Quick Start](./gettingstarted_quick-start-advanced.md) you will learn how to register and use your own worker.
+Congratulations, you have deployed a first workflow and started an instance. In the [advanced Quick Start](./connectzeebe_cli-zbctl.md) you will learn how to register and use your own worker.

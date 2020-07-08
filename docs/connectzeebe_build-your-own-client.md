@@ -5,6 +5,11 @@ title: Build your own client
 
 If you're using a technology for which there is no library yet, you can easily implement your own client.
 
+See these two blog posts about creating a client: 
+
+* [Generating a Zeebe-Python Client Stub in Less Than An Hour: A gRPC + Zeebe Tutorial](https://zeebe.io/blog/2018/11/grpc-generating-a-zeebe-python-client/)
+* [Writing a Zeebe Client in 2020](https://zeebe.io/blog/2020/06/zeebe-client-2020/)
+
 There are two essential steps:
 
 1. Authentication via OAuth

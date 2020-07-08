@@ -6,24 +6,29 @@
       "available-plans",
       "contact"
     ],
+    "Zeebe Cluster": [
+      "zeebe",
+      "operate",
+      "clients"
+    ],
     "Getting started": [
       "getting-started",
-      "quick-start",      
+      "quick-start",
       "camunda-cloud-console"
     ],
-    "Zeebe Cluster": ["zeebe", "operate", "clients"],
-    "Connect to Zeebe": [
+    "By Language": [
       "cli-zbctl",
-      "node-client",
-      "java-client",
       "go-client",
+      "java-client",
+      "spring-java-client",
+      "spring-kotlin-client",
+      "node-client",
       "other-clients",
       "build-your-own-client"
     ],
-    "Tutorials": [
-      "quick-start-advanced"
+    "Trial Plan (Beta)": [
+      "trial-overview"
     ],
-    "Trial Plan (Beta)": ["trial-overview"],
     "Professional Plan (Early Access)": [
       "professional-overview",
       "professional-requesting-access",

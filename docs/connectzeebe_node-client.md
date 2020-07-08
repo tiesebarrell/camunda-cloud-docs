@@ -1,6 +1,6 @@
 ---
 id: node-client
-title: Getting Started with Node.js
+title: Node.js
 ---
 
 The [Zeebe Node Client](https://github.com/creditsenseau/zeebe-client-node-js) exists for Node.js applications. 
@@ -397,7 +397,7 @@ We will edit the model to add a Conditional Gateway.
 * Under _Details_ enter the following in _Condition expression_: 
 
 ```
-=time.hour >=0 and time.hour <=12
+=time.hour >=0 and time.hour <=11
 ```
 
 * Click on the arrow connecting the Gateway to the _After noon_ task. 
