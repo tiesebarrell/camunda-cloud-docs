@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Kotlin + Spring · Camunda Cloud Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Getting Started with Camunda Cloud using Kotlin and Spring"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Kotlin + Spring · Camunda Cloud Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://camunda-cloud.github.io/"/><meta property="og:description" content="# Getting Started with Camunda Cloud using Kotlin and Spring"/><meta property="og:image" content="https://camunda-cloud.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://camunda-cloud.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/camunda-cloud-logo.png" alt="Camunda Cloud Docs"/><h2 class="headerTitleWithLogo">Camunda Cloud Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/welcome" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/users" target="_self">Users</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>By Language</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Welcome</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/welcome">Welcome!</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-camunda-cloud">What is Camunda Cloud?</a></li><li class="navListItem"><a class="navItem" href="/docs/available-plans">Available Plans</a></li><li class="navListItem"><a class="navItem" href="/docs/contact">Contact</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Zeebe Cluster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zeebe">Zeebe</a></li><li class="navListItem"><a class="navItem" href="/docs/operate">Operate</a></li><li class="navListItem"><a class="navItem" href="/docs/clients">Clients</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/quick-start">Quick start</a></li><li class="navListItem"><a class="navItem" href="/docs/camunda-cloud-console">Camunda Cloud Console</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">By Language</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cli-zbctl">CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/go-client">Go</a></li><li class="navListItem"><a class="navItem" href="/docs/java-client">Java</a></li><li class="navListItem"><a class="navItem" href="/docs/spring-java-client">Java + Spring</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/spring-kotlin-client">Kotlin + Spring</a></li><li class="navListItem"><a class="navItem" href="/docs/node-client">Node.js</a></li><li class="navListItem"><a class="navItem" href="/docs/other-clients">Other Clients</a></li><li class="navListItem"><a class="navItem" href="/docs/build-your-own-client">Build your own client</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Trial Plan (Beta)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/trial-overview">Overview of the Trial Plan</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Professional Plan (Early Access)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/professional-overview">Overview of the Professional Plan</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-requesting-access">Requesting Access</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-reservations">Managing Reservations</a></li><li class="navListItem"><a class="navItem" href="/docs/professional-billing">Billing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Kotlin + Spring</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="getting-started-with-camunda-cloud-using-kotlin-and-spring"></a><a href="#getting-started-with-camunda-cloud-using-kotlin-and-spring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started with Camunda Cloud using Kotlin and Spring</h1>
+<p>The <a href="https://github.com/zeebe-io/spring-zeebe">Spring Zeebe Client</a> is available for Spring and Spring Boot applications.</p>
+<p>Watch a <a href="https://youtu.be/TFDSv8YAazI">video tutorial on YouTube</a> walking through this Getting Started Guide.</p>
+<p><a href="https://youtu.be/TFDSv8YAazI"><img src="/docs/assets/getting-started-kotlin-thumbnail.png" alt=""></a></p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li><a href="https://github.com/zeebe-io/zeebe-modeler/releases">Zeebe Modeler</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="scaffolding-the-project"></a><a href="#scaffolding-the-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scaffolding the project</h2>
+<ul>
+<li><p>Download a maven Spring starter from <a href="https://start.spring.io/#!type=maven-project&amp;language=kotlin&amp;platformVersion=2.3.1.RELEASE&amp;packaging=jar&amp;jvmVersion=11&amp;groupId=io.camunda&amp;artifactId=cloudstarter&amp;name=cloudstarter&amp;description=Getting%20Started%20with%20Camunda%20Cloud%20and%20Spring%20Boot&amp;packageName=io.camunda.cloudstarter&amp;dependencies=webflux">here</a>.</p></li>
+<li><p>Unzip it into a new directory.</p></li>
+</ul>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=27">Video link</a></p>
+<ul>
+<li>Add the <a href="https://github.com/zeebe-io/spring-zeebe">Spring Zeebe Client</a> dependency to the <code>pom.xml</code> file:</li>
+</ul>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>io.zeebe.spring<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-zeebe-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.23.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=119">Video link</a></p>
+<h2><a class="anchor" aria-hidden="true" id="create-camunda-cloud-cluster"></a><a href="#create-camunda-cloud-cluster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Camunda Cloud cluster</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=148">Video link</a></p>
+<ul>
+<li>Log in to <a href="https://camunda.io">https://camunda.io</a>.</li>
+<li>Create a new Zeebe 0.23.3 cluster.</li>
+<li>When the new cluster appears in the console, create a new set of client credentials.</li>
+<li>Copy the client Connection Info environment variables block.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="configure-connection"></a><a href="#configure-connection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure connection</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=232">Video link</a></p>
+<ul>
+<li>Add the client connection credentials for your cluster to the file <code>src/main/resources/application.properties</code>:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-attr">zeebe.client.cloud.clusterId</span>=<span class="hljs-number">3</span>b640f45-<span class="hljs-number">0</span>dcd-<span class="hljs-number">469</span>a-<span class="hljs-number">8551</span>-<span class="hljs-number">7</span>f68a5d4f53b
+<span class="hljs-attr">zeebe.client.cloud.clientId</span>=rvQhH1LgzZ8hWxYpnX-WCFoqxl3ps6_o
+<span class="hljs-attr">zeebe.client.cloud.clientSecret</span>=Y_tumI88mpbDbxlY0ueVyPK6BHjMAe5FpBtPU4TQPPyr4FuDxpMN7P9Mj7M26j6a
+<span class="hljs-attr">zeebe.client.worker.defaultName</span>=myworker
+</code></pre>
+<ul>
+<li>Save the file.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="test-connection-with-camunda-cloud"></a><a href="#test-connection-with-camunda-cloud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test Connection with Camunda Cloud</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=324">Video link</a></p>
+<ul>
+<li>Annotate the <code>CloudStarterApplication</code> class in the file <code>src/main/java/io.camunda/CloudStarterApplication.kt</code> with
+the <code>@EnableZeebeClient</code> annotation, and add the <code>@Autowired</code> <code>ZeebeClientLifecycle</code> property:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableZeebeClient</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudstarterApplication</span> </span>{
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> client: ZeebeClientLifecycle? = <span class="hljs-literal">null</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+        runApplication&lt;CloudstarterApplication&gt;(*args)
+    }
+}
+</code></pre>
+<ul>
+<li>Add the <code>@RestController</code> annotation to the class, and create a REST mapping that returns the cluster topology:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableZeebeClient</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudstarterApplication</span> </span>{
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> client: ZeebeClientLifecycle? = <span class="hljs-literal">null</span>
+
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/status"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getStatus</span><span class="hljs-params">()</span></span>: String? {
+        <span class="hljs-keyword">val</span> topology = client!!.newTopologyRequest().send().join()
+        <span class="hljs-keyword">return</span> topology.toString()
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+        runApplication&lt;CloudstarterApplication&gt;(*args)
+    }
+}
+</code></pre>
+<ul>
+<li><p>Run the application with the command <code>mvn spring-boot:run</code>.</p></li>
+<li><p>Open <a href="http://localhost:8080/status">http://localhost:8080/status</a> in your web browser.</p></li>
+</ul>
+<p>You will see the topology response from the cluster.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-bpmn-model"></a><a href="#create-a-bpmn-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a BPMN model</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=616">Video link</a></p>
+<ul>
+<li>Download and install the <a href="https://github.com/zeebe-io/zeebe-modeler/releases">Zeebe Modeler</a>.</li>
+<li>Open Zeebe Modeler and create a new BPMN Diagram.</li>
+<li>Create a new BPMN diagram.</li>
+<li>Add a StartEvent, an EndEvent, and a Task.</li>
+<li>Click on the Task, click on the little spanner/wrench icon, and select &quot;Service Task&quot;.</li>
+<li>Set the <em>Name</em> of the Service Task to <code>Get Time</code>, and the <em>Type</em> to <code>get-time</code>.</li>
+</ul>
+<p>It should look like this:</p>
+<p><img src="/docs/assets/gettingstarted_first-model.png" alt=""></p>
+<ul>
+<li>Click on the blank canvas of the diagram, and set the <em>Id</em> to <code>test-process</code>, and the <em>Name</em> to &quot;Test Process&quot;.</li>
+<li>Save the diagram to <code>src/main/resources/test-process.bpmn</code> in your project.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="deploy-the-bpmn-model-to-camunda-cloud"></a><a href="#deploy-the-bpmn-model-to-camunda-cloud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy the BPMN model to Camunda Cloud</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=752">Video Link</a></p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and add the <code>@ZeebeDeployment</code> annotation to the
+<code>CloudStarterApplication</code> class:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-meta">@ZeebeDeployment(classPathResources = [<span class="hljs-meta-string">"test-process.bpmn"</span>])</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="start-a-workflow-instance"></a><a href="#start-a-workflow-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a Workflow Instance</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=823">Video Link</a></p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and add a REST method to start an instance
+of the workflow:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/start"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">startWorkflowInstance</span><span class="hljs-params">()</span></span>: String? {
+        <span class="hljs-keyword">val</span> workflowInstanceEvent = client!!
+                .newCreateInstanceCommand()
+                .bpmnProcessId(<span class="hljs-string">"test-process"</span>)
+                .latestVersion()
+                .send()
+                .join()
+        <span class="hljs-keyword">return</span> workflowInstanceEvent.toString()
+    }
+}
+</code></pre>
+<ul>
+<li><p>Run the program with the command: <code>mvn spring-boot:run</code>.</p></li>
+<li><p>Visit <a href="http://localhost:8080/start">http://localhost:8080/start</a> in your browser.</p></li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs">CreateWorkflowInstanceResponseImpl{<span class="hljs-attribute">workflowKey</span>=2251799813685249, <span class="hljs-attribute">bpmnProcessId</span>=<span class="hljs-string">'test-process'</span>, <span class="hljs-attribute">version</span>=1, <span class="hljs-attribute">workflowInstanceKey</span>=2251799813698314}
+</code></pre>
+<p>A workflow instance has been started. Let's view it in Operate.</p>
+<h2><a class="anchor" aria-hidden="true" id="view-a-workflow-instance-in-operate"></a><a href="#view-a-workflow-instance-in-operate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View a Workflow Instance in Operate</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=959">Video Link</a></p>
+<ul>
+<li>Go to your cluster in the <a href="https://camunda.io">Camunda Cloud Console</a>.</li>
+<li>In the cluster detail view, click on &quot;<em>View Workflow Instances in Camunda Operate</em>&quot;.</li>
+<li>In the &quot;<em>Instances by Workflow</em>&quot; column, click on &quot;<em>Test Process - 1 Instance in 1 Version</em>&quot;.</li>
+<li>Click the Instance Id to open the instance.</li>
+<li>You will see the token is stopped at the &quot;<em>Get Time</em>&quot; task.</li>
+</ul>
+<p>Let's create a task worker to serve the job represented by this task.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-job-worker"></a><a href="#create-a-job-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Job Worker</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=1026">Video Link</a></p>
+<p>We will create a worker program that logs out the job metadata, and completes the job with success.</p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and add a REST method to start an instance
+of the workflow:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-keyword">var</span> logger: Logger = LoggerFactory.getLogger(javaClass)
+
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-meta">@ZeebeWorker(type = <span class="hljs-meta-string">"get-time"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">handleGetTime</span><span class="hljs-params">(client: <span class="hljs-type">JobClient</span>, job: <span class="hljs-type">ActivatedJob</span>)</span></span> {
+        logger.info(job.toString())
+        client.newCompleteCommand(job.getKey())
+                .send().join()
+    }
+}
+</code></pre>
+<ul>
+<li>Run the worker program with the command: <code>mvn spring-boot:run</code>.</li>
+</ul>
+<p>You will see output similar to:</p>
+<pre><code class="hljs">2020-06-29 09:33:40.420  <span class="hljs-builtin-name">INFO</span> 5801 --- [ault-executor-1] io.zeebe.client.job.poller               : Activated 1 jobs <span class="hljs-keyword">for</span> worker whatever <span class="hljs-keyword">and</span> job<span class="hljs-built_in"> type </span>get-time
+2020-06-29 09:33:40.437  <span class="hljs-builtin-name">INFO</span> 5801 --- [pool-2-thread-1] i.c.c.CloudStarterApplication            : {<span class="hljs-string">"key"</span>:2251799813698319,<span class="hljs-string">"type"</span>:<span class="hljs-string">"get-time"</span>,<span class="hljs-string">"customHeaders"</span>:{},<span class="hljs-string">"workflowInstanceKey"</span>:2251799813698314,<span class="hljs-string">"bpmnProcessId"</span>:<span class="hljs-string">"test-process"</span>,<span class="hljs-string">"workflowDefinitionVersion"</span>:1,<span class="hljs-string">"workflowKey"</span>:2251799813685249,<span class="hljs-string">"elementId"</span>:<span class="hljs-string">"Activity_1ucrvca"</span>,<span class="hljs-string">"elementInstanceKey"</span>:2251799813698318,<span class="hljs-string">"worker"</span>:<span class="hljs-string">"whatever"</span>,<span class="hljs-string">"retries"</span>:3,<span class="hljs-string">"deadline"</span>:1593380320176,<span class="hljs-string">"variables"</span>:<span class="hljs-string">"{}"</span>,<span class="hljs-string">"variablesAsMap"</span>:{}}
+</code></pre>
+<ul>
+<li>Go back to Operate. You will see that the workflow instance is gone.</li>
+<li>Click on &quot;Running Instances&quot;.</li>
+<li>In the filter on the left, select &quot;<em>Finished Instances</em>&quot;.</li>
+</ul>
+<p>You will see the completed workflow instance.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-and-await-the-outcome-of-a-workflow-instance"></a><a href="#create-and-await-the-outcome-of-a-workflow-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create and Await the Outcome of a Workflow Instance</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=1428">Video Link</a></p>
+<p>We will now create the workflow instance, and get the final outcome in the calling code.</p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and edit the <code>startWorkflowInstance</code> method,
+to make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/start"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">startWorkflowInstance</span><span class="hljs-params">()</span></span>: String? {
+        <span class="hljs-keyword">val</span> workflowInstanceEventWithResult = client!!
+                .newCreateInstanceCommand()
+                .bpmnProcessId(<span class="hljs-string">"test-process"</span>)
+                .latestVersion()
+                .withResult()
+                .send()
+                .join()
+        <span class="hljs-keyword">return</span> workflowInstanceEventWithResult.toString()
+    }
+}
+</code></pre>
+<ul>
+<li><p>Run the program with the command: <code>mvn spring-boot:run</code>.</p></li>
+<li><p>Visit <a href="http://localhost:8080/start">http://localhost:8080/start</a> in your browser.</p></li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs">CreateWorkflowInstanceWithResultResponseImpl{<span class="hljs-attribute">workflowKey</span>=2251799813685249, <span class="hljs-attribute">bpmnProcessId</span>=<span class="hljs-string">'test-process'</span>, <span class="hljs-attribute">version</span>=1, <span class="hljs-attribute">workflowInstanceKey</span>=2251799813698527, <span class="hljs-attribute">variables</span>=<span class="hljs-string">'{}'</span>}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="call-a-rest-service-from-the-worker"></a><a href="#call-a-rest-service-from-the-worker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Call a REST Service from the Worker</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=1470">Video link</a></p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and edit the <code>handleGetTime</code> method,
+to make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+
+        <span class="hljs-meta">@ZeebeWorker(type = <span class="hljs-meta-string">"get-time"</span>)</span>
+        <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">handleGetTime</span><span class="hljs-params">(client: <span class="hljs-type">JobClient</span>, job: <span class="hljs-type">ActivatedJob</span>)</span></span> {
+            logger.info(job.toString())
+            <span class="hljs-keyword">val</span> uri = <span class="hljs-string">"https://json-api.joshwulf.com/time"</span>
+    
+            <span class="hljs-keyword">val</span> restTemplate = RestTemplate()
+            <span class="hljs-keyword">val</span> result = restTemplate.getForObject(uri, String::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>)!!</span>
+    
+            client.newCompleteCommand(job.key)
+                    .variables(<span class="hljs-string">"{\"time\":<span class="hljs-variable">$result</span>}"</span>)
+                    .send().join()
+        }
+}
+</code></pre>
+<ul>
+<li>Run the program with the command: <code>mvn spring-boot:run</code>.</li>
+<li>Visit <a href="http://localhost:8080/start">http://localhost:8080/start</a> in your browser.</li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs">CreateWorkflowInstanceWithResultResponseImpl{<span class="hljs-attr">workflowKey=2251799813685249,</span> <span class="hljs-attr">bpmnProcessId='test-process',</span> <span class="hljs-attr">version=1,</span> <span class="hljs-attr">workflowInstanceKey=2251799813698527,</span> <span class="hljs-attr">variables='{"time":{"time":"Sun,</span> <span class="hljs-number">28</span> Jun <span class="hljs-number">2020</span> <span class="hljs-number">21</span>:<span class="hljs-number">49</span>:<span class="hljs-number">48</span> GMT<span class="hljs-string">","</span>hour<span class="hljs-string">":21,"</span>minute<span class="hljs-string">":49,"</span>second<span class="hljs-string">":48,"</span>day<span class="hljs-string">":0,"</span>month<span class="hljs-string">":5,"</span>year<span class="hljs-string">":2020}}'}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="make-a-decision"></a><a href="#make-a-decision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make a Decision</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=1608">Video link</a></p>
+<p>We will edit the model to add a Conditional Gateway.</p>
+<ul>
+<li>Open the BPMN model file <code>bpmn/test-process.bpmn</code> in the Zeebe Modeler.</li>
+<li>Drop a Gateway between the Service Task and the End event.</li>
+<li>Add two Service Tasks after the Gateway.</li>
+<li>In one, set the <em>Name</em> to <code>Before noon</code> and the <em>Type</em> to <code>make-greeting</code>.</li>
+<li>Switch to the <em>Headers</em> tab on that Task, and create a new Key <code>greeting</code> with the Value <code>Good morning</code>.</li>
+<li>In the second, set the <em>Name</em> to <code>After noon</code> and the <em>Type</em> to <code>make-greeting</code>.</li>
+<li>Switch to the <em>Headers</em> tab on that Task, and create a new Key <code>greeting</code> with the Value <code>Good afternoon</code>.</li>
+<li>Click on the arrow connecting the Gateway to the <em>Before noon</em> task.</li>
+<li>Under <em>Details</em> enter the following in <em>Condition expression</em>:</li>
+</ul>
+<pre><code class="hljs">=time.hour &gt;=<span class="hljs-number">0</span> <span class="hljs-built_in">and</span> time.hour &lt;=<span class="hljs-number">11</span>
+</code></pre>
+<ul>
+<li>Click on the arrow connecting the Gateway to the <em>After noon</em> task.</li>
+<li>Click the spanner/wrench icon and select &quot;Default Flow&quot;.</li>
+<li>Connect both Service Tasks to the End Event.</li>
+</ul>
+<p>It should look like this:</p>
+<p><img src="/docs/assets/gettingstarted_second-model.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-worker-that-acts-based-on-custom-headers"></a><a href="#create-a-worker-that-acts-based-on-custom-headers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Worker that acts based on Custom Headers</h2>
+<p><a href="https://youtu.be/TFDSv8YAazI?t=2080">Video link</a></p>
+<p>We will create a second worker that takes the custom header and applies it to the variables in the workflow.</p>
+<ul>
+<li>Edit the <code>src/main/kotlin/io.camunda/CloudStarterApplication.kt</code> file, and add the <code>handleMakeGreeting</code> method,
+to make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-meta">@ZeebeWorker(type = <span class="hljs-meta-string">"make-greeting"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">handleMakeGreeting</span><span class="hljs-params">(client: <span class="hljs-type">JobClient</span>, job: <span class="hljs-type">ActivatedJob</span>)</span></span> {
+        <span class="hljs-keyword">val</span> headers = job.customHeaders
+        <span class="hljs-keyword">val</span> greeting = headers.getOrDefault(<span class="hljs-string">"greeting"</span>, <span class="hljs-string">"Good day"</span>)
+        <span class="hljs-keyword">val</span> variablesAsMap = job.variablesAsMap
+        <span class="hljs-keyword">val</span> name = variablesAsMap.getOrDefault(<span class="hljs-string">"name"</span>, <span class="hljs-string">"there"</span>) <span class="hljs-keyword">as</span> String
+        <span class="hljs-keyword">val</span> say = <span class="hljs-string">"<span class="hljs-variable">$greeting</span> <span class="hljs-variable">$name</span>"</span>
+        client.newCompleteCommand(job.key)
+                .variables(<span class="hljs-string">"{\"say\": \"<span class="hljs-variable">$say</span>\"}"</span>)
+                .send().join()
+    }
+}
+</code></pre>
+<ul>
+<li>Edit the <code>startWorkflowInstance</code> method, and make it look like this:</li>
+</ul>
+<pre><code class="hljs css language-kotlin"><span class="hljs-comment">// ...</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CloudStarterApplication</span> </span>{
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/start"</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">startWorkflowInstance</span><span class="hljs-params">()</span></span>: String? {
+        <span class="hljs-keyword">val</span> workflowInstanceResult = client!!
+                .newCreateInstanceCommand()
+                .bpmnProcessId(<span class="hljs-string">"test-process"</span>)
+                .latestVersion()
+                .variables(<span class="hljs-string">"{\"name\": \"Josh Wulf\"}"</span>)
+                .withResult()
+                .send()
+                .join()
+        <span class="hljs-keyword">return</span> workflowInstanceResult
+                .variablesAsMap
+                .getOrDefault(<span class="hljs-string">"say"</span>, <span class="hljs-string">"Error: No greeting returned"</span>) <span class="hljs-keyword">as</span> String?
+    }
+}
+</code></pre>
+<p>You can change the variable <code>name</code> value to your own name (or derive it from the url path or a parameter).</p>
+<ul>
+<li>Run the program with the command: <code>mvn spring-boot:run</code>.</li>
+<li>Visit <a href="http://localhost:8080/start">http://localhost:8080/start</a> in your browser.</li>
+</ul>
+<p>You will see output similar to the following:</p>
+<pre><code class="hljs"><span class="hljs-attribute">Good Morning Josh Wulf</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="profit"></a><a href="#profit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Profit!</h2>
+<p>Congratulations. You've completed the Getting Started Guide for Camunda Cloud using Kotlin with Spring.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/8/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/spring-java-client"><span class="arrow-prev">← </span><span>Java + Spring</span></a><a class="docs-next button" href="/docs/node-client"><span>Node.js</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#scaffolding-the-project">Scaffolding the project</a></li><li><a href="#create-camunda-cloud-cluster">Create Camunda Cloud cluster</a></li><li><a href="#configure-connection">Configure connection</a></li><li><a href="#test-connection-with-camunda-cloud">Test Connection with Camunda Cloud</a></li><li><a href="#create-a-bpmn-model">Create a BPMN model</a></li><li><a href="#deploy-the-bpmn-model-to-camunda-cloud">Deploy the BPMN model to Camunda Cloud</a></li><li><a href="#start-a-workflow-instance">Start a Workflow Instance</a></li><li><a href="#view-a-workflow-instance-in-operate">View a Workflow Instance in Operate</a></li><li><a href="#create-a-job-worker">Create a Job Worker</a></li><li><a href="#create-and-await-the-outcome-of-a-workflow-instance">Create and Await the Outcome of a Workflow Instance</a></li><li><a href="#call-a-rest-service-from-the-worker">Call a REST Service from the Worker</a></li><li><a href="#make-a-decision">Make a Decision</a></li><li><a href="#create-a-worker-that-acts-based-on-custom-headers">Create a Worker that acts based on Custom Headers</a></li><li><a href="#profit">Profit!</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/welcome.html">Welcome</a><a href="/docs/en/quick-start.html">Quick start</a></div><div><h5>Community</h5><a href="https://zeebe-io.slack.com/">Community Chat</a><a href="https://twitter.com/camunda" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://blog.camunda.com/">Blog</a><a href="https://github.com/camunda">GitHub</a><a href="https://console.cloud.camunda.io/terms/">Terms and Conditions</a></div></section><section class="copyright">Copyright © 2020 Camunda Cloud</section></footer></div></body></html>
