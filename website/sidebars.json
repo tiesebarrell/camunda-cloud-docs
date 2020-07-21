@@ -18,6 +18,7 @@
     ],
     "By Language": [
       "cli-zbctl",
+      "csharp-client",
       "go-client",
       "java-client",
       "spring-java-client",
