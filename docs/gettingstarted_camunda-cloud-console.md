@@ -22,9 +22,14 @@ When a user signs up to Camunda Cloud, they receive a personal organization. Clu
 
 If several users need access to the same Zeebe cluster, all users can be assigned to the same organization. If a user is assigned to more than one organization, the organization can be changed in the avatar menu of the navigation bar.
 
+![avatar-menue-multiple-organisations](./assets/avatar-menue-multiple-organisations.png)
+
 ## Organization Settings
 
 Organisationseinstellungen können über das Avatar Menu erreicht werden.
+
+
+![avatar-menue](./assets/avatar-menue.png)
 
 ### Overview
 
