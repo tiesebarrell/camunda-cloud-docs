@@ -24,7 +24,7 @@ If several users need access to the same Zeebe cluster, all users can be assigne
 
 ## Organization Settings
 
-Organisationseinstellungen können über das Avatar Menu erreicht werden.
+Organization settings can be accessed via the menu in the navigation bar.
 
 ### Overview
 
