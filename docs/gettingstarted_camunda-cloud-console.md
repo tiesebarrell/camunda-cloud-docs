@@ -28,7 +28,6 @@ If several users need access to the same Zeebe cluster, all users can be assigne
 
 Organization settings can be accessed via the menu in the navigation bar.
 
-
 ![avatar-menue](./assets/avatar-menue.png)
 
 ### Overview
