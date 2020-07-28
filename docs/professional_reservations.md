@@ -7,7 +7,7 @@ Once signed up for the professional plan, you have access to the Cluster Reserva
 
 Cluster Reservations control how many clusters you can deploy. Increasing the number of reservations allows you to deploy more clusters, decreasing the number of reservations does the opposite.
 
-You can access the Cluster Reservations page by selecting the menu entry "Reserved Clusters" from the Camunda Cloud Console navigation bar.
+You can access the Cluster Reservations page by selecting the menu entry "Organization Settings" from the Camunda Cloud Console navigation bar.
 
 ## Inspect active Reservations
 
