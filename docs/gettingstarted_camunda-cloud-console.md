@@ -20,7 +20,7 @@ To interact with Zeebe, an application must authenticate itself via OAuth. A [cl
 
 When a user signs up to Camunda Cloud, they receive a personal organization. Clusters that the user creates in this organization are assigned to this organization.
 
-If several users need access to the same Zeebe cluster, all users can be assigned to the same organization. If a user is assigned to more than one organization, the organization can be changed in the avatar menu of the navigation bar.
+If several users need access to the same Zeebe cluster, all users can be assigned to the same organization. If a user is assigned to more than one organization, the organization can be changed in the menu of the navigation bar.
 
 ![avatar-menue-multiple-organisations](./assets/avatar-menue-multiple-organisations.png)
 
