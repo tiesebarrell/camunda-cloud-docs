@@ -10,6 +10,8 @@ Watch a [video tutorial on YouTube](https://youtu.be/_GQuqEwzWKM) walking throug
 
 [![](assets/getting-started-go-thumbnail.png)](https://youtu.be/_GQuqEwzWKM)
 
+View [the complete project on GitHub](https://github.com/jwulf/camunda-cloud-getting-started-go).
+
 _Estimated time to complete: 60 minutes_
 
 ## Prerequisites
