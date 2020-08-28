@@ -15,7 +15,7 @@ Details:
 
 * Professional support by Camunda (8x5)
 * Remote consulting budget for dedicated sessions with technical expert from Camunda
-* Perpetual access to one Zeebe development cluster
+* Access to one Zeebe development cluster
 * Additional production clusters can be added on demand using a flexible pay as you go model
 
 Request access to the professional plan by visiting the [Camunda Cloud page on the website](https://camunda.com/cloud).
