@@ -35,6 +35,10 @@
       "professional-requesting-access",
       "professional-reservations",
       "professional-billing"
+    ],
+    "Programmatic Access":[
+      "cloudapi-clients",
+      "cloudapi-endpoints"
     ]
   }
 }
