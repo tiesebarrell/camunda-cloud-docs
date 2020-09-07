@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: npm run build --prefix ./website
       - name: Publish
-        run: GIT_USER=camunda-cloud CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages --prefix ./website
+        run: GIT_USER=camunda-cloud CURRENT_BRANCH=master npm run publish-gh-pages --prefix ./website
