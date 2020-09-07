@@ -1,0 +1,22 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - "*"
+      - "!master"
+    tags-ignore:
+      - "*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Build
+        run: npm run build --prefix ./website
+      - name: Publish
+        run: GIT_USER=camunda-cloud CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages --prefix ./website
