@@ -2,11 +2,8 @@ name: publish
 
 on:
   push:
-    branches:
-      - "*"
-      - "!master"
-    tags-ignore:
-      - "*"
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
 
 env:
   # Used by docusaurus publish-site command
@@ -28,9 +25,6 @@ jobs:
         run: npm run build --prefix ./website
       - name: Publish
         run: |
-          # Extract GitHub org/user
-          # REPO="${{ github.repository }}"
-          # GIT_USERNAME="camunda-cloud-bot"
           # Configure git client
           echo "Git repo - $REPO"
           echo "Git user - $GIT_USERNAME"

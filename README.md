@@ -15,7 +15,9 @@ You can now browse the docs under [http://localhost:3000/](http://localhost:3000
 
 ## Publishing
 
-All commits to the branch `gh-pages` are automatically published to GitHub Pages. Locally you can use the following command as well:
+Creating a new tag with semver (`x.x.x`) will start a github action that builds and publishes the documentation.
+
+Locally you can use the following command as well:
 
 ```bash
 cd website
