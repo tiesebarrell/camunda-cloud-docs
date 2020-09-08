@@ -8,6 +8,12 @@ on:
     tags-ignore:
       - "*"
 
+env:
+  # Used by docusaurus publish-site command
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  GIT_USERNAME: camunda-cloud-bot
+  REPO: ${{ github.repository }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -23,14 +29,14 @@ jobs:
       - name: Publish
         run: |
           # Extract GitHub org/user
-          REPO="${{ github.repository }}"
-          GIT_USERNAME="camunda-cloud-bot"
+          # REPO="${{ github.repository }}"
+          # GIT_USERNAME="camunda-cloud-bot"
           # Configure git client
           echo "Git repo - $REPO"
           echo "Git user - $GIT_USERNAME"
           echo "Event name - ${{github.event_name }}"
           git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
           git config --global user.name "$GIT_USERNAME"
-          echo "machine github.com login $GIT_USERNAME password $GH_TOKEN" > ~/.netrc
+          echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
           # Run docusaurus-publish
-          GIT_USER=$GIT_USERNAME CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages --prefix ./website
+          GIT_USER=$GIT_USERNAME CURRENT_BRANCH=master npm run publish-gh-pages --prefix ./website
