@@ -33,4 +33,4 @@ jobs:
           git config --global user.name "$GIT_USERNAME"
           echo "machine github.com login $GIT_USERNAME password $GH_TOKEN" > ~/.netrc
           # Run docusaurus-publish
-          GIT_USER=$GIT_USERNAME CURRENT_BRANCH=master npm run publish-gh-pages --prefix ./website
+          GIT_USER=$GIT_USERNAME CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages --prefix ./website
