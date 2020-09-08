@@ -21,4 +21,16 @@ jobs:
       - name: Build
         run: npm run build --prefix ./website
       - name: Publish
-        run: GIT_USER=camunda-cloud CURRENT_BRANCH=master npm run publish-gh-pages --prefix ./website
+        run: |
+          # Extract GitHub org/user
+          REPO="${{ github.repository }}"
+          GIT_USERNAME="camunda-cloud-bot"
+          # Configure git client
+          echo "Git repo - $REPO"
+          echo "Git user - $GIT_USERNAME"
+          echo "Event name - ${{github.event_name }}"
+          git config --global user.email "$GIT_USERNAME@users.noreply.github.com"
+          git config --global user.name "$GIT_USERNAME"
+          echo "machine github.com login $GIT_USERNAME password $GH_TOKEN" > ~/.netrc
+          # Run docusaurus-publish
+          GIT_USER=$GIT_USERNAME CURRENT_BRANCH=master npm run publish-gh-pages --prefix ./website
