@@ -16,4 +16,4 @@ Please note:
 * Access tokens have a validity period that can be found in the access token. After this time a new Access Token must be requested.
 * The Auth Service has a built-in rate limiting. If too many token requests are executed in a short time, the client is blocked for a certain time. Since the access tokens have a certain validity period, they must be cached on the client side.
 
-The officially offered client libraries (as well as the node client) have already integrated the Auth routine and take care of obtaining and refreshing an access token and make us of a local cache.
+The officially offered client libraries (as well as the node client) have already integrated the Auth routine and take care of obtaining and refreshing an access token and make use of a local cache.

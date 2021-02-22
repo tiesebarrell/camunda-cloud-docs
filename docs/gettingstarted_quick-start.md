@@ -47,15 +47,15 @@ In the upper right area you'll find the button _Create New Cluster_. Click on it
 
 ![cluster-creating](assets/cluster-overview-new-cluster-creating.png)
 
-The cluster is now being set up. During this phase, its state is _Creating_. After one or two minutes the cluster is ready for use and changes its state to _healthy_:
+The cluster is now being set up. During this phase, its state is _Creating_. After one or two minutes the cluster is ready for use and changes its state to _Healthy_:
 
 ![cluster-healthy](assets/cluster-overview-new-cluster-healthy.png)
 
-After the cluster has been created, you can jump into the cluster detail page by clicking at the newly created cluster.
+After the cluster has been created, you can jump into the cluster detail page by clicking on the newly created cluster.
 
 ## Create a client
 
-To create a new client you have to navigate into the Clients tab:
+To create a new client you have to navigate into the API tab:
 
 ![cluster-details](./assets/cluster-detail-clients.png)
 
@@ -63,7 +63,7 @@ Click on _Create New Client_-Button to create a new client, name your client acc
 
 ![create-client](./assets/cluster-details-create-client.png)
 
-The newly created client appears in the list, click on `Connection Information` to get all the information you need to connect:
+The newly created client appears in the list. Click on `Connection Information` to get all the information you need to connect:
 
 - `ZEEBE_ADDRESS`: Address where your cluster can be reached.
 - `ZEEBE_CLIENT_ID` and `ZEEBE_CLIENT_SECRET`: Credentials to request a new access token.

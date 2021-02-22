@@ -17,7 +17,7 @@ You can also download a binary for your Operating System from the [Zeebe GitHub 
 
 ## Usage
 
-A detailed documentation about zbctl can be found [here](https://github.com/jwulf/zbctl#readme).
+Detailed documentation about zbctl can be found [here](https://github.com/jwulf/zbctl#readme).
 
 Basically: After creating a client, `export` statements are displayed which set all necessary environment variables. If these are known to the system, `zbctl` can communicate directly with its own cluster in the cloud without further configuration.
 
